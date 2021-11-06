@@ -73,4 +73,10 @@
         tools:layout_editor_absoluteX="241dp"
         tools:layout_editor_absoluteY="264dp" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="645dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
