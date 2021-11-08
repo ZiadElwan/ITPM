@@ -11,11 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JustQuitIt">
-        <activity android:name=".GoogleSignInActivity" />
         <activity android:name=".main_menu_page" />
         <activity android:name=".register_page" />
         <activity android:name=".login_page" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".first_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
