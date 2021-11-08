@@ -7,15 +7,67 @@
     android:background="@drawable/main_bg"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:fontFamily="@font/archivo_black"
-        android:text="You Can Do It!"
-        android:textColor="@color/white"
-        android:textSize="38sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="56dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:text="You Can Do It!"
+            android:textColor="@color/white"
+            android:textSize="38sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="302dp"
+        android:layout_height="138dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/edit"
+        android:backgroundTint="#64FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/start_btn"
+                android:layout_width="172dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#3A4D8F"
+                android:text="Get Started!"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="263dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/doppio_one"
+            android:gravity="center"
+            android:text="Never ever think of giving up quit smoking"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
