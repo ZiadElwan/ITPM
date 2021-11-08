@@ -6,14 +6,14 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="529dp"
-        android:layout_height="829dp"
+        android:id="@+id/imageView4"
+        android:layout_width="465dp"
+        android:layout_height="822dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bluewash" />
+        app:layout_constraintVertical_bias="0.21"
+        app:srcCompat="@drawable/coverwattpad"
+        tools:layout_editor_absoluteX="-38dp" />
 
     <ImageView
         android:id="@+id/viewlogo"
@@ -29,8 +29,9 @@
         android:id="@+id/viewabout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="34dp"
         android:text="Just Quit It! is an application which allows smokers to quit smoking for good. We  provides professional tips,  track health progress, help smokers to save money, achievement badges. We  also links to the Nicotine  Candy products."
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
