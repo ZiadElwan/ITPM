@@ -79,8 +79,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout7"
-        android:layout_width="288dp"
-        android:layout_height="53dp"
+        android:layout_width="290dp"
+        android:layout_height="139dp"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +89,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_feedback"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@drawable/edit"
             android:hint="enter your feedback" />
     </com.google.android.material.textfield.TextInputLayout>
