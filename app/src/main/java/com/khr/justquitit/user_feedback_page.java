@@ -18,7 +18,7 @@ public class user_feedback_page extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         setContentView(R.layout.user_feedback_page);
 
         btnSubmitFeedback = findViewById(R.id.btn_submit_feedback);

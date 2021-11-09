@@ -11,11 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JustQuitIt">
-        <activity android:name=".user_feedback_page"></activity>
-        <activity android:name=".main_menu_page" />
+        <activity android:name=".smoker_profile"></activity>
+        <activity android:name=".about_page" />
+        <activity android:name=".Setting" />
+        <activity android:name=".Change_password" />
+        <activity android:name=".user_feedback_page" />
+        <activity android:name=".Notification" />
+        <activity android:name=".Products" />
+        <activity android:name=".HealthProgress" />
+        <activity android:name=".Savings" />
+        <activity android:name=".QuitSmokingTips" />
+        <activity android:name=".first_page" />
         <activity android:name=".register_page" />
         <activity android:name=".login_page" />
-        <activity android:name=".first_page">
+        <activity android:name=".main_menu_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

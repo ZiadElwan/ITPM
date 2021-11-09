@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group1">
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_baseline_notifications_24"
+            android:title="Notification"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/user_24px"
+            android:title="Profile"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:title="Feedback" />
+        <item
+            android:id="@+id/nav_changepwrd"
+            android:title="Change Password" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="Settings" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout" />
+    </group>
+</menu>

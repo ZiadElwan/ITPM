@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_bg"
+    android:fitsSystemWindows="true"
+    android:minWidth="19dp"
+    android:textColor="@color/black">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_bg"
+        android:textColor="@color/black">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:background="@drawable/menu_bg"
+            android:textColor="@color/black">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#6A95CC"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_tips"
+                android:layout_width="152dp"
+                android:layout_height="316dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="150dp"
+                android:layout_marginBottom="280dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:srcCompat="@drawable/tips2" />
+
+            <ImageButton
+                android:id="@+id/btn_savings"
+                android:layout_width="152dp"
+                android:layout_height="193dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginEnd="150dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:srcCompat="@drawable/savings" />
+
+            <ImageButton
+                android:id="@+id/btn_healthprogress"
+                android:layout_width="152dp"
+                android:layout_height="193dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginBottom="280dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.423"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:layout_constraintVertical_bias="0.206"
+                app:srcCompat="@drawable/health_progress" />
+
+            <ImageButton
+                android:id="@+id/btn_products"
+                android:layout_width="152dp"
+                android:layout_height="316dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="250dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.423"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/product" />
+
+            <TextView
+                android:id="@+id/tv_savings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#96FFFFFF"
+                android:fontFamily="casual"
+                android:text="Savings"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_savings"
+                app:layout_constraintEnd_toEndOf="@+id/btn_savings"
+                app:layout_constraintHorizontal_bias="0.474"
+                app:layout_constraintStart_toStartOf="@+id/btn_savings"
+                app:layout_constraintTop_toTopOf="@+id/btn_savings"
+                app:layout_constraintVertical_bias="0.558" />
+
+            <TextView
+                android:id="@+id/tv_health"
+                android:layout_width="142dp"
+                android:layout_height="75dp"
+                android:background="#96FFFFFF"
+                android:fontFamily="casual"
+                android:text="Health Progress"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_healthprogress"
+                app:layout_constraintEnd_toEndOf="@+id/btn_healthprogress"
+                app:layout_constraintStart_toStartOf="@+id/btn_healthprogress"
+                app:layout_constraintTop_toTopOf="@+id/btn_healthprogress" />
+
+            <TextView
+                android:id="@+id/tv_products"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#96FFFFFF"
+                android:fontFamily="casual"
+                android:text="Products"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btn_products"
+                app:layout_constraintStart_toStartOf="@+id/btn_products"
+                app:layout_constraintTop_toTopOf="@+id/btn_products" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/nav_menu"></com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>
