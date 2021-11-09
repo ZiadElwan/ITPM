@@ -18,9 +18,9 @@ public class first_page extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         setContentView(R.layout.first_page);
-       
+
 
         button = findViewById(R.id.start_btn);
         button.setOnClickListener(new View.OnClickListener(){
