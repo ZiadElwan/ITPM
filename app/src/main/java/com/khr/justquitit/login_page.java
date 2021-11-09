@@ -19,7 +19,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -160,7 +159,7 @@ public class login_page extends AppCompatActivity {
                 }
 
                 private void sendUserToNextActivity() {
-                    Intent intent = new Intent(login_page.this, main_menu_page.class);
+                    Intent intent = new Intent(login_page.this, main_menu_testing.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }
