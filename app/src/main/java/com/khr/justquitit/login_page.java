@@ -104,7 +104,7 @@ public class login_page extends AppCompatActivity {
                     }
                 });
 
-                passwordResetDialog.show();
+                passwordResetDialog.create().show();
 
             }
         });
@@ -124,6 +124,11 @@ public class login_page extends AppCompatActivity {
             mEmail.requestFocus();
         }
 
+        else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            mEmail.setError("Please provide valid email!");
+            mEmail.requestFocus();
+        }
+
         else if(password.isEmpty()){
             mPassword.setError("Password is required!");
             mPassword.requestFocus();
@@ -134,10 +139,7 @@ public class login_page extends AppCompatActivity {
             mPassword.requestFocus();
         }
 
-        else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            mEmail.setError("Please provide valid email!");
-            mEmail.requestFocus();
-        }
+
 
 
         else{

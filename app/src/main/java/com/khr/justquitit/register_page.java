@@ -194,6 +194,12 @@ public class register_page extends AppCompatActivity {
                     mRetype.requestFocus();
                 }
 
+                else if(!password.equals(retype)){
+                    mRetype.setError("Password not matched!");
+                    mRetype.requestFocus();
+
+                }
+
                 else if(email.isEmpty()){
                     mEmail.setError("Email is required!");
                     mEmail.requestFocus();
@@ -204,10 +210,7 @@ public class register_page extends AppCompatActivity {
                     mEmail.requestFocus();
                 }
 
-                else if(!password.equals(retype)){
-                    mRetype.setError("Password not matched!");
 
-                }
 
                 else if(age.isEmpty()){
                     mAge.setError("Age is required!");
