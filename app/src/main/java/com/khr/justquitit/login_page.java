@@ -159,7 +159,7 @@ public class login_page extends AppCompatActivity {
                 }
 
                 private void sendUserToNextActivity() {
-                    Intent intent = new Intent(login_page.this, main_menu_testing.class);
+                    Intent intent = new Intent(login_page.this, main_menu.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }
