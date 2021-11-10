@@ -16,6 +16,16 @@
         <activity android:name=".main_menu_testing" />
         <activity android:name=".register_page" />
         <activity android:name=".login_page" />
+
+        <activity android:name=".smoker_profile" />
+        <activity android:name=".about_page" />
+        <activity android:name=".Setting" />
+        <activity android:name=".Change_password" />
+        <activity android:name=".Notification" />
+        <activity android:name=".Products" />
+        <activity android:name=".HealthProgress" />
+        <activity android:name=".Savings" />
+        <activity android:name=".QuitSmokingTips" />
         <activity android:name=".first_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

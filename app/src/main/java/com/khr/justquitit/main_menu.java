@@ -89,7 +89,7 @@ public class main_menu extends AppCompatActivity {
 
                         break;
 
-                    case R.id.nav_logout:
+                    case R.id.nav_logout2:
 
                         FirebaseAuth.getInstance().signOut();
                         startActivity(new Intent(main_menu.this, login_page.class));
