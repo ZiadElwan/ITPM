@@ -12,6 +12,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -24,8 +25,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -42,6 +46,10 @@ public class register_page extends AppCompatActivity {
     DatabaseReference reference;
     DatePickerDialog.OnDateSetListener setListener;
     DatePickerDialog.OnDateSetListener setListener2;
+
+    String name, email, age, startDate, endDate, password;
+
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +80,8 @@ public class register_page extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fUser = fAuth.getCurrentUser();
 
-        reference = FirebaseDatabase.getInstance().getReference("UserData");
+        /*reference = FirebaseDatabase.getInstance().getReference("UserData");*/
+
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -142,17 +151,20 @@ public class register_page extends AppCompatActivity {
             }
         }); */
 
+
+
         btnRegister = findViewById(R.id.signup_btn);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PerforAuth();
-               insertUserData();
+
+               /*insertUserData();*/
 
 
             }
 
-            private void insertUserData() {
+            /*private void insertUserData() {
                 String name = mName.getText().toString();
                 String password = mPassword.getText().toString();
                 String email = mEmail.getText().toString();
@@ -162,7 +174,7 @@ public class register_page extends AppCompatActivity {
 
                 UserData UserData = new UserData(name, password, email, age, startDate, endDate);
                 reference.push().setValue(UserData);
-            }
+            }*/
         });
     }
             private void PerforAuth() {
@@ -233,6 +245,7 @@ public class register_page extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                sendUserData();
                                 sendUserToNextActivity();
                                 Toast.makeText(register_page.this, "You have been registered successfully!",
                                         Toast.LENGTH_LONG).show();
@@ -259,6 +272,19 @@ public class register_page extends AppCompatActivity {
 
     }
 
+    private void sendUserData(){
+        /*FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();*/
+        reference = FirebaseDatabase.getInstance().getReference(fAuth.getUid());
 
+        String name = mName.getText().toString();
+        String password = mPassword.getText().toString();
+        String email = mEmail.getText().toString();
+        String age = mAge.getText().toString();
+        String startDate = mStartDate.getText().toString();
+        String endDate = mEndDate.getText().toString();
+
+        UserData UserData = new UserData(name, password, email, age, startDate, endDate);
+        reference.setValue(UserData);
+    }
 
 }

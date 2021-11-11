@@ -1,11 +1,10 @@
 package com.khr.justquitit;
 
 public class UserData {
+    public String username, password, email, age, startDate, endDate;
+
     public UserData() {
-
     }
-
-    String username, password, email, age, startDate, endDate;
 
     public UserData(String username, String password, String email, String age, String startDate, String endDate) {
         this.username = username;

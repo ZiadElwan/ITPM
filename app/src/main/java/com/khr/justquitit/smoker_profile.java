@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -49,7 +50,7 @@ public class smoker_profile extends AppCompatActivity {
         fUser = fAuth.getCurrentUser();
 
         database = FirebaseDatabase.getInstance();
-        userRef = database.getReference();
+        userRef = database.getReference(fAuth.getUid());
 
         //show user information
         userRef.addValueEventListener(new ValueEventListener() {
@@ -65,7 +66,14 @@ public class smoker_profile extends AppCompatActivity {
                         tvenddate.setText(ds.child("endDate").getValue(String.class));
                     }
                 }*/
-                String username = dataSnapshot.child("UserData").child(fUser.getUid()).child("username").getValue(String.class);
+                UserData userData = dataSnapshot.getValue(UserData.class);
+                tvusername.setText("Name: " + userData.getUsername());
+                tvemail.setText("Email: " + userData.getEmail());
+                tvage.setText("Age: " + userData.getAge());
+                tvstartdate.setText("Start Recovery Date: " + userData.getStartDate());
+                tvenddate.setText("End Recovery Date: " + userData.getEndDate());
+
+                /*String username = dataSnapshot.child("UserData").child(fUser.getUid()).child("username").getValue(String.class);
                 tvusername.setText(username);
 
                 String email = dataSnapshot.child("UserData").child(fUser.getUid()).child("email").getValue(String.class);
@@ -76,14 +84,14 @@ public class smoker_profile extends AppCompatActivity {
                 String startdate = dataSnapshot.child("UserData").child(fUser.getUid()).child("startDate").getValue(String.class);
                 tvstartdate.setText(startdate);
                 String enddate = dataSnapshot.child("UserData").child(fUser.getUid()).child("endDate").getValue(String.class);
-                tvenddate.setText(enddate);
+                tvenddate.setText(enddate);*/
 
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Toast.makeText(smoker_profile.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -179,7 +179,21 @@ public class main_menu extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        int id = item.getItemId();
+
+        if (id == R.id.nav_profile){
+            Intent intent5 = new Intent(main_menu.this, smoker_profile.class);
+            startActivity(intent5);
+            return true;
+        }
+
+        else if(id == R.id.nav_changepwrd){
+            Intent intent2 = new Intent(main_menu.this, Change_password.class);
+            startActivity(intent2);
+            return true;
+        }
+
+        /*switch (item.getItemId()){
 
             case R.id.nav_notification:
                 Intent intent = new Intent(main_menu.this, Notification.class);
@@ -210,7 +224,7 @@ public class main_menu extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(main_menu.this, login_page.class));
                 break;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
