@@ -62,4 +62,12 @@
         android:text="Expected to success"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="638dp" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6A95CC"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
 </androidx.constraintlayout.widget.ConstraintLayout>
