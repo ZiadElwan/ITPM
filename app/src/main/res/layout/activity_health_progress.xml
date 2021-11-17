@@ -8,9 +8,11 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/bluepastel" />
+        android:layout_width="412dp"
+        android:layout_height="789dp"
+        app:srcCompat="@drawable/bluepastel"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="-28dp" />
 
     <TextView
         android:id="@+id/textView10"
@@ -25,8 +27,8 @@
         tools:layout_editor_absoluteY="277dp" />
 
     <LinearLayout
-        android:layout_width="357dp"
-        android:layout_height="239dp"
+        android:layout_width="352dp"
+        android:layout_height="259dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,11 +43,12 @@
         android:id="@+id/imageView6"
         android:layout_width="352dp"
         android:layout_height="76dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/screen_background_light"
-        tools:layout_editor_absoluteY="594dp" />
+        app:srcCompat="@android:drawable/screen_background_light" />
 
     <TextView
         android:id="@+id/textView14"
@@ -53,7 +56,7 @@
         android:layout_height="wrap_content"
         android:text="You started on"
         tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="607dp" />
+        tools:layout_editor_absoluteY="613dp" />
 
     <TextView
         android:id="@+id/textView15"
@@ -61,7 +64,7 @@
         android:layout_height="wrap_content"
         android:text="Expected to success"
         tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="638dp" />
+        tools:layout_editor_absoluteY="642dp" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
