@@ -14,7 +14,7 @@ import com.khr.justquitit.RecoveryHistory;
 
 import java.util.ArrayList;
 
-public class RecoveryHistoryAdapter extends RecyclerView.Adapter<RecoveryHistoryAdapter.RecoveryHolder {
+public class RecoveryHistoryAdapter extends RecyclerView.Adapter<RecoveryHistoryAdapter.RecoveryHolder> {
 
     private Context context;
     private ArrayList<RecoveryHistory> rhistory;
