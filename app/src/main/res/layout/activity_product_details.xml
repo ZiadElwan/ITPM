@@ -15,7 +15,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="30dp"
         android:clickable="true"
-        app:backgroundTint="#FBFBB4"
+        app:backgroundTint="#F2F2F2"
         app:elevation="6dp"
         app:srcCompat="@drawable/ic_baseline_search_24" />
 
