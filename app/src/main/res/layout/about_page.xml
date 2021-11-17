@@ -44,11 +44,20 @@
         app:layout_constraintVertical_bias="0.495" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#6A95CC"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/about_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6A95CC"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="About Us"
+        app:titleTextColor="@color/black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
