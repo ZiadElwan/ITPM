@@ -66,12 +66,12 @@
 
                     <Button
                         android:id="@+id/btn_bookmark"
-                        android:layout_width="238dp"
-                        android:layout_height="53dp"
+                        android:layout_width="276dp"
+                        android:layout_height="45dp"
                         android:layout_marginTop="20dp"
                         android:background="@android:color/darker_gray"
                         android:text="Add to favourite"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         app:icon="@drawable/ic_baseline_favorite_border_24"
                         app:iconGravity="end"
                         app:layout_constraintEnd_toEndOf="parent"
