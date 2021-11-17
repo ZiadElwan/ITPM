@@ -27,7 +27,7 @@ public class RecoveryHistoryAdapter extends RecyclerView.Adapter<RecoveryHistory
     @NonNull
     @Override
     public RecoveryHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_card, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_card2, parent, false);
         return new RecoveryHolder(view);
     }
 
@@ -46,8 +46,8 @@ public class RecoveryHistoryAdapter extends RecyclerView.Adapter<RecoveryHistory
 
         public RecoveryHolder(@NonNull View itemView) {
             super(itemView);
-            txtrecoveryDay = itemView.findViewById(R.id.text_day);
-            txtrecoveryActivity = itemView.findViewById(R.id.text_activity);
+            txtrecoveryDay = itemView.findViewById(R.id.tv_recoveryday);
+            txtrecoveryActivity = itemView.findViewById(R.id.tv_recoveryactivity);
         }
 
         void setDetail(RecoveryHistory rhistory) {
