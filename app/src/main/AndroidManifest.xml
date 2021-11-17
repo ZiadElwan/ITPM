@@ -19,7 +19,9 @@
         <activity android:name=".register_page" />
         <activity android:name=".login_page" />
         <activity android:name=".smoker_profile" />
-        <activity android:name=".about_page" />
+        <activity
+            android:name=".about_page"
+            android:parentActivityName=".main_menu"/>
         <activity android:name=".Setting" />
         <activity android:name=".Change_password" />
         <activity android:name=".Notification" />
