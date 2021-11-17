@@ -21,7 +21,7 @@ public class RecoveryHistory {
         return recoveryActivity;
     }
 
-    public void setSavingActivity(String recoveryActivity) {
+    public void setRecoveryActivity(String recoveryActivity) {
         this.recoveryActivity = recoveryActivity;
     }
 }

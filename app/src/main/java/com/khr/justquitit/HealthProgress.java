@@ -33,7 +33,7 @@ public class HealthProgress extends AppCompatActivity {
 
         recoveryArray = new ArrayList<>();
 
-        recoveryAdapter = new SavingHistoryAdapter(this, recoveryArray);
+        recoveryAdapter = new RecoveryHistoryAdapter(this, recoveryArray);
         recyclerView.setAdapter(recoveryAdapter);
 
         //add ItemDecoration
@@ -43,18 +43,20 @@ public class HealthProgress extends AppCompatActivity {
         CreateDataForCard();
 
     }
+
     private void CreateDataForCard() {
-        RecoveryHistory health = new RecoveryHistory("Day 1","Started my own journey to stop smoking");
+        RecoveryHistory health = new RecoveryHistory("Day 1", "Started my own journey to stop smoking");
         recoveryArray.add(health);
 
-        health = new RecoveryHistory("Day 1","Started my own journey to stop smoking");
+        health = new RecoveryHistory("Day 1", "Started my own journey to stop smoking");
         recoveryArray.add(health);
-        health = new RecoveryHistory("Day 2","Able to constraint myself to smoke");
+        health = new RecoveryHistory("Day 2", "Able to constraint myself to smoke");
         recoveryArray.add(health);
-        health = new RecoveryHistory("Day 3","Able to constraint myself to smoke");
+        health = new RecoveryHistory("Day 3", "Able to constraint myself to smoke");
         recoveryArray.add(health);
-        health = new RecoveryHistory("Day 4","Able to constraint myself to smoke");
+        health = new RecoveryHistory("Day 4", "Able to constraint myself to smoke");
         recoveryArray.add(health);
-        health = new RecoveryHistory("Day 5","Able to constraint myself to smoke");
+        health = new RecoveryHistory("Day 5", "Able to constraint myself to smoke");
         recoveryArray.add(health);
+    }
 }
