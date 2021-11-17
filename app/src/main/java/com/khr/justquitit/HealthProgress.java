@@ -47,8 +47,6 @@ public class HealthProgress extends AppCompatActivity {
         RecoveryHistory health = new RecoveryHistory("Day 1", "Started my own journey to stop smoking");
         recoveryArray.add(health);
 
-        health = new RecoveryHistory("Day 1", "Started my own journey to stop smoking");
-        recoveryArray.add(health);
         health = new RecoveryHistory("Day 2", "Able to constraint myself to smoke");
         recoveryArray.add(health);
         health = new RecoveryHistory("Day 3", "Able to constraint myself to smoke");
@@ -56,6 +54,8 @@ public class HealthProgress extends AppCompatActivity {
         health = new RecoveryHistory("Day 4", "Able to constraint myself to smoke");
         recoveryArray.add(health);
         health = new RecoveryHistory("Day 5", "Able to constraint myself to smoke");
+        recoveryArray.add(health);
+        health = new RecoveryHistory("Day 6", "Able to constraint myself to smoke");
         recoveryArray.add(health);
     }
 }
