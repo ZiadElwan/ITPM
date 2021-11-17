@@ -33,6 +33,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 public class register_page extends AppCompatActivity {
@@ -274,7 +275,8 @@ public class register_page extends AppCompatActivity {
 
     private void sendUserData(){
         /*FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();*/
-        reference = FirebaseDatabase.getInstance().getReference(fAuth.getUid());
+        String uid = fAuth.getUid();
+//        reference = FirebaseDatabase.getInstance().getReference(fAuth.getUid());
 
         String name = mName.getText().toString();
         String password = mPassword.getText().toString();
@@ -283,8 +285,19 @@ public class register_page extends AppCompatActivity {
         String startDate = mStartDate.getText().toString();
         String endDate = mEndDate.getText().toString();
 
-        UserData UserData = new UserData(name, password, email, age, startDate, endDate);
-        reference.setValue(UserData);
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("uid", uid);
+        hashMap.put("name", name);
+        hashMap.put("password", password);
+        hashMap.put("email", email);
+        hashMap.put("age", age);
+        hashMap.put("startDate", startDate);
+        hashMap.put("endDate", endDate);
+
+        reference = FirebaseDatabase.getInstance().getReference("UserData");
+//        UserData UserData = new UserData(name, password, email, age, startDate, endDate);
+        reference.child(uid).setValue(hashMap);
+//        reference.setValue(UserData);
     }
 
 }

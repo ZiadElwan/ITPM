@@ -1,13 +1,13 @@
 package com.khr.justquitit;
 
 public class UserData {
-    public String username, password, email, age, startDate, endDate;
+    public String name, password, email, age, startDate, endDate;
 
     public UserData() {
     }
 
-    public UserData(String username, String password, String email, String age, String startDate, String endDate) {
-        this.username = username;
+    public UserData(String name, String password, String email, String age, String startDate, String endDate) {
+        this.name = name;
         this.password = password;
         this.email = email;
         this.age = age;
@@ -40,12 +40,12 @@ public class UserData {
         this.endDate = endDate;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String Name) {
+        this.name = name;
     }
 
     public String getPassword() {

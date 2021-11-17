@@ -3,10 +3,12 @@ package com.khr.justquitit;
 public class Tips {
     String name;
     int image;
+    String details;
 
-    public Tips(String name, int image) {
+    public Tips(String name, int image, String details) {
         this.name = name;
         this.image = image;
+        this.details = details;
     }
 
     public String getName() {
@@ -23,5 +25,14 @@ public class Tips {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
     }
 }

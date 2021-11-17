@@ -1,12 +1,14 @@
 package com.khr.justquitit.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.icu.text.Transliterator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.khr.justquitit.QuitSmokingTips;
 import com.khr.justquitit.R;
 import com.khr.justquitit.Tips;
+import com.khr.justquitit.TipsDetailActivity;
 
 import java.util.List;
 
@@ -22,7 +25,7 @@ public class TipsRecyclerViewAdapter extends RecyclerView.Adapter<TipsRecyclerVi
     private Context context;
 
 
-    public TipsRecyclerViewAdapter(Context context, List<Tips> tips) {
+    public TipsRecyclerViewAdapter(Context context, List<Tips> tipsList) {
         this.context = context;
         this.tipsList = tipsList;
     }
@@ -40,6 +43,7 @@ public class TipsRecyclerViewAdapter extends RecyclerView.Adapter<TipsRecyclerVi
     public void onBindViewHolder(@NonNull TipsViewHolder holder, int position) {
         holder.tvTipsName.setText((tipsList.get(position).getName()));
         holder.imgViewTipsImage.setImageResource(tipsList.get(position).getImage());
+
     }
 
     @Override
@@ -47,7 +51,7 @@ public class TipsRecyclerViewAdapter extends RecyclerView.Adapter<TipsRecyclerVi
         return tipsList.size();
     }
 
-    public class TipsViewHolder extends RecyclerView.ViewHolder{
+    public class TipsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
 //        public TextView tvTips;
         public ImageView imgViewTipsImage;
@@ -57,8 +61,19 @@ public class TipsRecyclerViewAdapter extends RecyclerView.Adapter<TipsRecyclerVi
             super(itemView);
 //            tvTips = itemView.findViewById(R.id.tv_tips_name);
             tvTipsName = itemView.findViewById(R.id.tv_tips);
-            imgViewTipsImage = itemView.findViewById(R.id.constraint);
+            imgViewTipsImage = itemView.findViewById(R.id.image_tips);
+            itemView.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View view) {
+            Toast.makeText(view.getContext(),"Tips: " + tipsList.get(getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(view.getContext(), TipsDetailActivity.class);
+            intent.putExtra("tipsName", tipsList.get(getAdapterPosition()).getName());
+            intent.putExtra("tipsDetail", tipsList.get(getAdapterPosition()).getDetails());
+            intent.putExtra("image", tipsList.get(getAdapterPosition()).getImage());
+            view.getContext().startActivity(intent);
         }
     }
 }
