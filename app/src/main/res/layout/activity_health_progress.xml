@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="You started on"
+        android:text="You started on 30-03-2021"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView15"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
-        android:text="Expected to success"
+        android:text="Expected to success 30-06-2021"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintStart_toStartOf="@+id/imageView6" />
@@ -91,8 +91,8 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="229dp"
-        android:layout_height="165dp"
+        android:layout_width="239dp"
+        android:layout_height="174dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
