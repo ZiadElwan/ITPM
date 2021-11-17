@@ -6,11 +6,13 @@ import android.icu.text.Transliterator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.khr.justquitit.QuitSmokingTips;
@@ -44,6 +46,9 @@ public class TipsRecyclerViewAdapter extends RecyclerView.Adapter<TipsRecyclerVi
         holder.tvTipsName.setText((tipsList.get(position).getName()));
         holder.imgViewTipsImage.setImageResource(tipsList.get(position).getImage());
 
+        //animation -- saja test
+        holder.cardView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_transition_animation));
+
     }
 
     @Override
@@ -57,8 +62,16 @@ public class TipsRecyclerViewAdapter extends RecyclerView.Adapter<TipsRecyclerVi
         public ImageView imgViewTipsImage;
         public TextView tvTipsName;
 
+        //ini jugak
+        CardView cardView;
+
         public TipsViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            //barang animation
+            cardView = itemView.findViewById(R.id.card_container);
+
+
 //            tvTips = itemView.findViewById(R.id.tv_tips_name);
             tvTipsName = itemView.findViewById(R.id.tv_tips);
             imgViewTipsImage = itemView.findViewById(R.id.image_tips);
