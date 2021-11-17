@@ -13,6 +13,7 @@
         android:theme="@style/Theme.JustQuitIt">
         <activity android:name=".TipsDetailActivity"></activity>
         <activity android:name=".main_menu" />
+        <activity android:name=".ProductDetails"></activity>
         <activity android:name=".user_feedback_page" />
         <activity android:name=".main_menu_testing" />
         <activity android:name=".register_page" />
@@ -22,7 +23,9 @@
         <activity android:name=".Setting" />
         <activity android:name=".Change_password" />
         <activity android:name=".Notification" />
-        <activity android:name=".Products" />
+        <activity
+            android:name=".ShowProducts"
+            android:parentActivityName=".main_menu" />
         <activity android:name=".HealthProgress" />
         <activity android:name=".Savings" />
         <activity android:name=".QuitSmokingTips" />

@@ -20,10 +20,6 @@
             android:id="@+id/nav_changepwrd"
             android:title="Change Password" />
         <item
-            android:id="@+id/nav_setting"
-            android:icon="@drawable/ic_baseline_settings_24"
-            android:title="Settings" />
-        <item
             android:id="@+id/nav_logout"
             android:title="Logout" />
     </group>
