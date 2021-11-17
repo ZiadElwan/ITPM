@@ -44,16 +44,16 @@ public class smoker_profile extends AppCompatActivity {
         tvage = findViewById(R.id.tv_age);
         tvstartdate = findViewById(R.id.tv_startdate);
         tvenddate = findViewById(R.id.tv_enddate);
-        btnupdate = findViewById(R.id.btn_update);
+//        btnupdate = findViewById(R.id.btn_update);
 
         fAuth = FirebaseAuth.getInstance();
         fUser = fAuth.getCurrentUser();
 
         database = FirebaseDatabase.getInstance();
-        userRef = database.getReference(fAuth.getUid());
+        userRef = database.getReference("UserData");
 
         //show user information
-        userRef.addValueEventListener(new ValueEventListener() {
+        userRef.child(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //successfully
@@ -66,12 +66,19 @@ public class smoker_profile extends AppCompatActivity {
                         tvenddate.setText(ds.child("endDate").getValue(String.class));
                     }
                 }*/
-                UserData userData = dataSnapshot.getValue(UserData.class);
-                tvusername.setText("Name: " + userData.getUsername());
-                tvemail.setText("Email: " + userData.getEmail());
-                tvage.setText("Age: " + userData.getAge());
-                tvstartdate.setText("Start Recovery Date: " + userData.getStartDate());
-                tvenddate.setText("End Recovery Date: " + userData.getEndDate());
+//                UserData userData = dataSnapshot.getValue(UserData.class);
+
+//                tvusername.setText("Name: " + userData.getName());
+//                tvemail.setText("Email: " + userData.getEmail());
+//                tvage.setText("Age: " + userData.getAge());
+//                tvstartdate.setText("Start Recovery Date: " + userData.getStartDate());
+//                tvenddate.setText("End Recovery Date: " + userData.getEndDate());
+
+                tvusername.setText("Name: " + dataSnapshot.child("name").getValue());
+                tvemail.setText("Email: " + dataSnapshot.child("email").getValue());
+                tvage.setText("Age: " + dataSnapshot.child("age").getValue());
+                tvstartdate.setText("startDate: " + dataSnapshot.child("startDate").getValue());
+                tvenddate.setText("endDate: " + dataSnapshot.child("endDate").getValue());
 
                 /*String username = dataSnapshot.child("UserData").child(fUser.getUid()).child("username").getValue(String.class);
                 tvusername.setText(username);

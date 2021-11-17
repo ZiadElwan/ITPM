@@ -11,12 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JustQuitIt">
-        <activity android:name=".main_menu"></activity>
+        <activity android:name=".TipsDetailActivity"></activity>
+        <activity android:name=".main_menu" />
         <activity android:name=".user_feedback_page" />
         <activity android:name=".main_menu_testing" />
         <activity android:name=".register_page" />
         <activity android:name=".login_page" />
-
         <activity android:name=".smoker_profile" />
         <activity android:name=".about_page" />
         <activity android:name=".Setting" />
