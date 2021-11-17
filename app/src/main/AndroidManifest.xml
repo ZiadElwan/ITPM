@@ -26,7 +26,9 @@
         <activity
             android:name=".ShowProducts"
             android:parentActivityName=".main_menu" />
-        <activity android:name=".HealthProgress" />
+        <activity
+            android:name=".HealthProgress"
+            android:parentActivityName=".main_menu"/>
         <activity android:name=".Savings" />
         <activity android:name=".QuitSmokingTips" />
         <activity android:name=".first_page">
