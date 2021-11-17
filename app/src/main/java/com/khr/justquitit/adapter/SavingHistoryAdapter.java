@@ -4,9 +4,12 @@ import android.content.Context;// <-- nnti edit ke firebase
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.khr.justquitit.R;
@@ -39,6 +42,8 @@ public class SavingHistoryAdapter extends RecyclerView.Adapter<SavingHistoryAdap
         SavingHistory saving = historys.get(position);
         holder.setDetail(saving);
 
+        holder.cardView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_transition_animation));
+
     }
 
     @Override
@@ -52,9 +57,11 @@ public class SavingHistoryAdapter extends RecyclerView.Adapter<SavingHistoryAdap
     //view Holder: saving_Holder
     public class saving_Holder extends RecyclerView.ViewHolder{
         private TextView txtsavingDate, txtsavingActivity, txtsaving;
+        CardView cardView;
 
         public saving_Holder(@NonNull View itemView){
             super(itemView);
+            cardView = itemView.findViewById(R.id.card_contain);
             txtsavingDate = itemView.findViewById(R.id.text_date);
             txtsavingActivity = itemView.findViewById(R.id.text_activity);
             txtsaving = itemView.findViewById(R.id.text_saving);
