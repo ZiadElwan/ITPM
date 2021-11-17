@@ -1,6 +1,8 @@
 package com.khr.justquitit;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +24,11 @@ public class HealthProgress extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_progress);
+
+        Toolbar toolbar = findViewById(R.id.prod_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar myActionbar = getSupportActionBar();
+        myActionbar.setDisplayHomeAsUpEnabled(true);
 
         InitializeCardView();
     }
