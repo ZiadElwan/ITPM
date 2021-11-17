@@ -84,7 +84,7 @@ public class main_menu extends AppCompatActivity {
                         break;
 
                     case R.id.nav_products:
-                        Intent intent5 = new Intent(main_menu.this, Products.class);
+                        Intent intent5 = new Intent(main_menu.this, ShowProducts.class);
                         startActivity(intent5);
 
                         break;
@@ -127,7 +127,7 @@ public class main_menu extends AppCompatActivity {
         btnprod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(main_menu.this, Products.class);
+                Intent intent = new Intent(main_menu.this, ShowProducts.class);
                 startActivity(intent);
             }
         });
@@ -193,7 +193,7 @@ public class main_menu extends AppCompatActivity {
             return true;
         }
 
-        /*switch (item.getItemId()){
+        switch (item.getItemId()){
 
             case R.id.nav_notification:
                 Intent intent = new Intent(main_menu.this, Notification.class);
@@ -215,16 +215,16 @@ public class main_menu extends AppCompatActivity {
                 startActivity(intent2);
                 break;
 
-            case R.id.nav_setting:
+            /*case R.id.nav_setting:
                 Intent intent3 = new Intent(main_menu.this, Setting.class);
                 startActivity(intent3);
-                break;
+                break;*/
 
             case R.id.nav_logout:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(main_menu.this, login_page.class));
                 break;
-        }*/
+        }
 
         return super.onOptionsItemSelected(item);
     }
