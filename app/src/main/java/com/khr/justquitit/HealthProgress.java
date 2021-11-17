@@ -27,7 +27,7 @@ public class HealthProgress extends AppCompatActivity {
     }
 
     private void InitializeCardView() {
-        recyclerView = findViewById(R.id.recycleviewCard);
+        recyclerView = findViewById(R.id.recycleviewcard);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         recoveryArray = new ArrayList<>();
