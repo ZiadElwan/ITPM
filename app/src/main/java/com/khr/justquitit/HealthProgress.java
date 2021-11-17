@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.khr.justquitit.adapter.RecoveryHistoryAdapter;
-import com.khr.justquitit.adapter.SavingHistoryAdapter;
 import com.khr.justquitit.utils.SpacingItemDecoration;
 
 import java.util.ArrayList;
