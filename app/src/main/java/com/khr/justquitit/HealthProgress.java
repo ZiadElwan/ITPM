@@ -25,7 +25,7 @@ public class HealthProgress extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_progress);
 
-        Toolbar toolbar = findViewById(R.id.prod_toolbar);
+        Toolbar toolbar = findViewById(R.id.health_toolbar);
         setSupportActionBar(toolbar);
         ActionBar myActionbar = getSupportActionBar();
         myActionbar.setDisplayHomeAsUpEnabled(true);
