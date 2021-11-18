@@ -1,6 +1,8 @@
 package com.khr.justquitit;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +21,11 @@ public class TipsDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tips_detail);
+
+        Toolbar toolbar = findViewById(R.id.tips_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar myActionbar = getSupportActionBar();
+        myActionbar.setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
         TextView tvTitle = findViewById(R.id.imageTitle);

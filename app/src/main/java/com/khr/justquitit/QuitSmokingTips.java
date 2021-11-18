@@ -1,6 +1,8 @@
 package com.khr.justquitit;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,6 +20,11 @@ public class QuitSmokingTips extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quit_smoking_tips);
+        Toolbar toolbar = findViewById(R.id.tips_toolbar2);
+        setSupportActionBar(toolbar);
+        ActionBar myActionbar = getSupportActionBar();
+        myActionbar.setDisplayHomeAsUpEnabled(true);
+
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
         linearLayoutManager = new LinearLayoutManager(QuitSmokingTips.this);
