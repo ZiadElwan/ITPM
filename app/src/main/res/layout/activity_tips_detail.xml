@@ -4,8 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tips_bg"
+    android:background="@drawable/bg_tips"
     tools:context=".TipsDetailActivity">
+
+
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar4"
@@ -30,78 +33,71 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="Tips" />
 
-    <RelativeLayout
-        android:layout_width="394dp"
-        android:layout_height="713dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar4">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp">
 
-        <ScrollView
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="390dp"
+            android:layout_height="527dp"
+            android:background="@drawable/layout_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageDetail">
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageDetail"
+            android:layout_width="411dp"
+            android:layout_height="204dp"
+            android:layout_marginTop="55dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/imageDesc"
+            android:layout_width="358dp"
+            android:layout_height="276dp"
+            android:layout_marginTop="20dp"
+            android:text="TextView"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageTitle" />
+
+        <TextView
+            android:id="@+id/imageTitle"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="TextView"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageDetail" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageDetail"
-                        android:layout_width="415dp"
-                        android:layout_height="180dp"
-                        android:layout_marginTop="100dp"
-                        android:scaleType="centerCrop"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:srcCompat="@tools:sample/avatars" />
-
-                    <TextView
-                        android:id="@+id/imageDesc"
-                        android:layout_width="358dp"
-                        android:layout_height="276dp"
-                        android:layout_marginTop="20dp"
-                        android:text="TextView"
-                        android:textSize="18sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageTitle" />
-
-                    <TextView
-                        android:id="@+id/imageTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="TextView"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageDetail" />
-
-                    <Button
-                        android:id="@+id/btn_bookmark"
-                        android:layout_width="276dp"
-                        android:layout_height="45dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@android:color/darker_gray"
-                        android:text="Add to favourite"
-                        android:textSize="16sp"
-                        app:icon="@drawable/ic_baseline_favorite_border_24"
-                        app:iconGravity="end"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageDesc" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </LinearLayout>
-        </ScrollView>
-    </RelativeLayout>
+        <Button
+            android:id="@+id/btn_bookmark"
+            android:layout_width="276dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/darker_gray"
+            android:text="Add to favourite"
+            android:textSize="16sp"
+            app:icon="@drawable/ic_baseline_favorite_border_24"
+            app:iconGravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageDesc" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

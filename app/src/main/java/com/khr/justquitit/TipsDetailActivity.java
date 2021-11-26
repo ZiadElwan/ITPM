@@ -14,25 +14,28 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class TipsDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tips_detail);
+        setContentView(R.layout.tips_detail);
 
-        Toolbar toolbar = findViewById(R.id.tips_toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar_new);
         setSupportActionBar(toolbar);
-        ActionBar myActionbar = getSupportActionBar();
-        myActionbar.setDisplayHomeAsUpEnabled(true);
+//        ActionBar myActionbar = getSupportActionBar();
+//        myActionbar.setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        TextView tvTitle = findViewById(R.id.imageTitle);
-        ImageView img = findViewById(R.id.imageDetail);
-        TextView tvDescription = findViewById(R.id.imageDesc);
-
-
+        TextView tvTitle = findViewById(R.id.img_title);
+        ImageView img = findViewById(R.id.img_Detail);
+        TextView tvDescription = findViewById(R.id.img_Desc);
+//
+//
         tvTitle.setText(intent.getStringExtra("tipsName"));
         tvDescription.setText(intent.getStringExtra("tipsDetail"));
         img.setImageResource(getIntent().getIntExtra("image" ,0));
