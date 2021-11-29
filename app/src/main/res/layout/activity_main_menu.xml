@@ -75,7 +75,7 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_healthprogress"
-                app:srcCompat="@drawable/menu4" />
+                app:srcCompat="@drawable/tips_quit_smoking" />
 
             <TextView
                 android:id="@+id/tv_savings"
