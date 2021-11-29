@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
@@ -26,7 +27,7 @@ public class main_menu extends AppCompatActivity {
 
     private long backPressedTime;
     private Toast backToast;
-    ImageButton btntips, btnsavings, btnhealth, btnprod;
+    CardView btntips, btnsavings, btnhealth, btnprod;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;

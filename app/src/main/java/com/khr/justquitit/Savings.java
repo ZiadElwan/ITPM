@@ -188,7 +188,7 @@ public class Savings extends AppCompatActivity {
 
     }
 
-    public void onBackPressed() {
+    /*public void onBackPressed() {
         AlertDialog.Builder alertDlg = new AlertDialog.Builder(this);
         alertDlg.setMessage("Are you sure want to exit");
         alertDlg.setCancelable(false);
@@ -209,7 +209,7 @@ public class Savings extends AppCompatActivity {
             }
         });
         alertDlg.create().show();
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -14,4 +14,5 @@
     <color name="colorWhite">#FFFFFFFF</color>
     <color name="colorDarkSemiTransparent">#C6000000</color>
     <color name="colorTextPrimary">#212121</color>
+    <color name="shadowColor">#2E2E2E</color>
 </resources>

@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JustQuitIt">
-        <activity android:name=".TipsDetailActivity"
-            android:parentActivityName=".QuitSmokingTips"/>
-
+        <activity
+            android:name=".TipsDetailActivity"
+            android:parentActivityName=".QuitSmokingTips" />
         <activity android:name=".main_menu" />
         <activity android:name=".ProductDetails" />
         <activity android:name=".user_feedback_page" />
@@ -23,7 +23,7 @@
         <activity android:name=".smoker_profile" />
         <activity
             android:name=".about_page"
-            android:parentActivityName=".main_menu"/>
+            android:parentActivityName=".main_menu" />
         <activity android:name=".Setting" />
         <activity android:name=".Change_password" />
         <activity android:name=".Notification" />
@@ -32,12 +32,11 @@
             android:parentActivityName=".main_menu" />
         <activity
             android:name=".HealthProgress"
-            android:parentActivityName=".main_menu"/>
+            android:parentActivityName=".main_menu" />
         <activity android:name=".Savings" />
-
-        <activity android:name=".QuitSmokingTips"
-            android:parentActivityName=".main_menu"/>
-
+        <activity
+            android:name=".QuitSmokingTips"
+            android:parentActivityName=".main_menu" />
         <activity android:name=".first_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,8 +44,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
 
         <meta-data
             android:name="preloaded_fonts"

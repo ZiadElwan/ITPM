@@ -5,7 +5,7 @@
     android:id="@+id/drawer_Layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/menu_bg"
+    android:background="@drawable/savings_bg"
     android:fitsSystemWindows="true"
     android:minWidth="19dp"
     android:textColor="@color/black">
@@ -25,12 +25,14 @@
                 android:id="@+id/toolbar2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#6A95CC"
+                android:background="#006A95CC"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="Savings"
+                app:titleTextColor="#040404" />
 
             <ImageView
                 android:id="@+id/imageView2"

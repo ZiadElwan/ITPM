@@ -36,7 +36,7 @@ public class ShowProducts extends AppCompatActivity {
     }
 
 
-
+    //Juz testing after that will retrieve data from firebase
     private List<ProductList> getAllProductInfor(){
         List<ProductList> allProduct = new ArrayList<ProductList>();
         allProduct.add(new ProductList("Habitrol Patch S1", R.drawable.habitrol, "Habitrol Nicotine Patches come in three decreasing nicotine levels. During our 8-week step-down program, you’ll work your way through these steps, gradually reducing your nicotine dependency and improving your chances of quitting. \n" +

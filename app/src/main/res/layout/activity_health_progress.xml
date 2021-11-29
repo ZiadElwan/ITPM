@@ -4,21 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bluepastel"
     tools:context=".HealthProgress">
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="412dp"
-        android:layout_height="789dp"
-        app:srcCompat="@drawable/bluepastel"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="-28dp" />
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="30dp"
         android:layout_marginBottom="24dp"
         android:text="Recovery History"
         android:textColor="@color/black"
@@ -26,8 +19,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
-        app:layout_constraintStart_toStartOf="@+id/imageView5" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -87,19 +80,15 @@
         app:layout_constraintStart_toStartOf="@+id/imageView6" />
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#6A95CC"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
-
-    <androidx.appcompat.widget.Toolbar
         android:id="@+id/health_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#6A95CC"
+        android:background="#006A95CC"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:title="Health Progress" />
 
     <ImageView
