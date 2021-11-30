@@ -8,13 +8,11 @@
     tools:context=".TipsDetailActivity">
 
 
-
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#6A95CC"
+        android:background="#006A95CC"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +23,7 @@
         android:id="@+id/tips_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#6A95CC"
+        android:background="#006A95CC"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"

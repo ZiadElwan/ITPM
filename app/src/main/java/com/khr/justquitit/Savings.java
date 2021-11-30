@@ -1,6 +1,7 @@
 package com.khr.justquitit;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,7 +37,7 @@ public class Savings extends AppCompatActivity {
     private RecyclerView recyclerView;
     private SavingHistoryAdapter savingAdapter;
     private ArrayList<SavingHistory> savingArray;
-    private static final int VERTICAL_ITEM_SPACE = 48;
+    private static final int VERTICAL_ITEM_SPACE = 28;
 
     FirebaseAuth fAuth;
     FirebaseUser fUser;
@@ -46,63 +47,10 @@ public class Savings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_savings);
 
-        setUpToolbar();
-
-        navigationView = (NavigationView) findViewById(R.id.navigation_menu2);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId())
-                {
-                    case  R.id.nav_aboutus:
-
-                        Intent intent = new Intent(Savings.this, about_page.class);
-                        startActivity(intent);
-                        break;
-
-                    case  R.id.nav_notification2:
-
-                        Intent intent1 = new Intent(Savings.this, Notification.class);
-                        startActivity(intent1);
-
-                        break;
-
-                    case  R.id.nav_tips:
-
-                        Intent intent2 = new Intent(Savings.this, QuitSmokingTips.class);
-                        startActivity(intent2);
-
-                        break;
-
-                    case R.id.nav_healthprogress:
-                        Intent intent3 = new Intent(Savings.this, HealthProgress.class);
-                        startActivity(intent3);
-
-                        break;
-
-                    case R.id.nav_savings:
-                        Intent intent4 = new Intent(Savings.this, Savings.class);
-                        startActivity(intent4);
-
-                        break;
-
-                    case R.id.nav_products:
-                        Intent intent5 = new Intent(Savings.this, ShowProducts.class);
-                        startActivity(intent5);
-
-                        break;
-
-                    case R.id.nav_logout2:
-
-                        FirebaseAuth.getInstance().signOut();
-                        startActivity(new Intent(Savings.this, login_page.class));
-
-                        break;
-                }
-                return false;
-            }
-        });
-
+        Toolbar toolbar = findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+        ActionBar myActionbar = getSupportActionBar();
+        myActionbar.setDisplayHomeAsUpEnabled(true);
 
         imgBtn = findViewById(R.id.imgBtn_saving);
         imgBtn.setOnClickListener(new View.OnClickListener() {
@@ -178,17 +126,10 @@ public class Savings extends AppCompatActivity {
 
     //--------------------------------------------------------------------------------------------------------------------------------------
 
-    public void setUpToolbar() {
-        drawerLayout = findViewById(R.id.drawer_Layout);
-        Toolbar toolbar = findViewById(R.id.toolbar2);
-        setSupportActionBar(toolbar);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
 
     }
 
-    public void onBackPressed() {
+    /*public void onBackPressed() {
         AlertDialog.Builder alertDlg = new AlertDialog.Builder(this);
         alertDlg.setMessage("Are you sure want to exit");
         alertDlg.setCancelable(false);
@@ -209,81 +150,4 @@ public class Savings extends AppCompatActivity {
             }
         });
         alertDlg.create().show();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
-
-        return super.onCreateOptionsMenu(menu);
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.nav_profile){
-            Intent intent5 = new Intent(Savings.this, smoker_profile.class);
-            startActivity(intent5);
-            return true;
-        }
-
-        else if(id == R.id.nav_changepwrd){
-            Intent intent2 = new Intent(Savings.this, Change_password.class);
-            startActivity(intent2);
-            return true;
-        }
-
-        switch (item.getItemId()){
-
-            case R.id.nav_notification:
-                Intent intent = new Intent(Savings.this, Notification.class);
-                startActivity(intent);
-                break;
-
-            case R.id.nav_profile:
-                Intent intent5 = new Intent(Savings.this, smoker_profile.class);
-                startActivity(intent5);
-                break;
-
-            case R.id.nav_feedback:
-                Intent intent1 = new Intent(Savings.this, user_feedback_page.class);
-                startActivity(intent1);
-                break;
-
-            case R.id.nav_changepwrd:
-                Intent intent2 = new Intent(Savings.this, Change_password.class);
-                startActivity(intent2);
-                break;
-
-            /*case R.id.nav_setting:
-                Intent intent3 = new Intent(Savings.this, Setting.class);
-                startActivity(intent3);
-                break;*/
-
-            case R.id.nav_logout:
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(Savings.this, login_page.class));
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    protected void onResume() {
-        super.onResume();
-        fAuth=FirebaseAuth.getInstance();
-        fUser=fAuth.getCurrentUser();
-
-        if(fUser==null){
-            //go to login page
-            Intent intent = new Intent(Savings.this,login_page.class);
-            startActivity(intent);
-        }
-
-    }
-
-
-}
+    }*/
