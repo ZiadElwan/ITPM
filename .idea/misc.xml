@@ -3,12 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/drawable/bg_windows.xml" value="0.2703125" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/drawable/ic_android.xml" value="0.19739583333333333" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/drawable/ic_clear.xml" value="0.19739583333333333" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/drawable/ic_corner.xml" value="0.14635416666666667" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_health_progress.xml" value="0.25416666666666665" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_main_menu.xml" value="0.264" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_product_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_products.xml" value="0.25416666666666665" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_savings.xml" value="0.264" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/item_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/layout_custom_dialog.xml" value="0.25416666666666665" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/main_menu.xml" value="0.264" />
         <entry key="..\:/git3/JustQuitIt/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.2203125" />
         <entry key="..\:/git3/JustQuitIt/app/src/main/res/layout/about_page.xml" value="0.18432971014492755" />
