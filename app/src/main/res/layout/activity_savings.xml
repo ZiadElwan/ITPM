@@ -21,6 +21,16 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black">
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="409dp"
+                android:layout_height="350dp"
+                android:fadingEdge="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/saving_head" />
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar2"
                 android:layout_width="match_parent"
@@ -34,50 +44,30 @@
                 app:title="Savings"
                 app:titleTextColor="#040404" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="413dp"
-                android:layout_height="266dp"
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="48sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.569"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-                app:srcCompat="@drawable/savingtotal" />
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="212dp"
-                android:layout_height="67dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView11"
-                app:layout_constraintEnd_toEndOf="@+id/textView11"
-                app:layout_constraintStart_toStartOf="@+id/textView12"
-                app:layout_constraintTop_toTopOf="@+id/textView11"
-                app:srcCompat="@drawable/edit" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_saveTitle"
+                tools:text="100.00" />
 
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="112dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="116dp"
                 android:text="RM "
-                android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textColor="@color/purple_200"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/textView11"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/tv_saveTitle" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="112dp"
-                android:text="TextView"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_saveTitle" />
 
             <TextView
@@ -94,8 +84,8 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
-                android:layout_width="348dp"
-                android:layout_height="377dp"
+                android:layout_width="367dp"
+                android:layout_height="342dp"
                 android:orientation="horizontal"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
@@ -107,7 +97,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycleviewCard"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="12dp" />
             </LinearLayout>
 
@@ -115,9 +105,9 @@
                 android:id="@+id/imgBtn_saving"
                 android:layout_width="81dp"
                 android:layout_height="78dp"
-                android:layout_marginTop="-50dp"
+                android:layout_marginTop="-90dp"
 
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/savingbutton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -126,7 +116,7 @@
                 android:id="@+id/tv_saveTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="64dp"
                 android:text="You Have Save"
                 android:textColor="@color/purple_700"
                 android:textSize="24sp"

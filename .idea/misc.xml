@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_health_progress.xml" value="0.25416666666666665" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_main_menu.xml" value="0.264" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_product_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_products.xml" value="0.25416666666666665" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_savings.xml" value="0.264" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/item_card.xml" value="0.25416666666666665" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/main_menu.xml" value="0.264" />
