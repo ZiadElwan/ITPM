@@ -14,6 +14,7 @@
         <activity android:name=".TipsDetailActivity"
             android:parentActivityName=".QuitSmokingTips"/>
 
+
         <activity android:name=".main_menu" />
         <activity android:name=".ProductDetails" />
         <activity android:name=".user_feedback_page" />
@@ -37,6 +38,8 @@
 
         <activity android:name=".QuitSmokingTips"
             android:parentActivityName=".main_menu"/>
+
+        <activity android:name=".QuitSmokingTipsFirebase" />
 
         <activity android:name=".first_page">
             <intent-filter>

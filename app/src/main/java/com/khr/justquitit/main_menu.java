@@ -66,7 +66,7 @@ public class main_menu extends AppCompatActivity {
 
                     case  R.id.nav_tips:
 
-                        Intent intent2 = new Intent(main_menu.this, QuitSmokingTips.class);
+                        Intent intent2 = new Intent(main_menu.this, QuitSmokingTipsFirebase.class);
                         startActivity(intent2);
 
                         break;
@@ -103,7 +103,7 @@ public class main_menu extends AppCompatActivity {
         btntips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(main_menu.this, QuitSmokingTips.class);
+                Intent intent = new Intent(main_menu.this, QuitSmokingTipsFirebase.class);
                 startActivity(intent);
             }
         });
