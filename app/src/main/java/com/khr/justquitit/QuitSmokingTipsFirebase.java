@@ -76,6 +76,7 @@ public class QuitSmokingTipsFirebase extends AppCompatActivity {
 
                     tipsFirebase.setImage( dataSnapshot.child("Image").getValue().toString());
                     tipsFirebase.setTitle( dataSnapshot.child("Title").getValue().toString());
+                    tipsFirebase.setDescription(dataSnapshot.child("Description").getValue().toString());
                     tipsList.add(tipsFirebase);
                 }
                 tipsAdapterFirebase = new TipsAdapterFirebase(getApplicationContext(), tipsList);

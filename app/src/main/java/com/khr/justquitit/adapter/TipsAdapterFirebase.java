@@ -34,6 +34,7 @@ public class TipsAdapterFirebase extends RecyclerView.Adapter<TipsAdapterFirebas
     public class  ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView imageView;
         TextView textView;
+        TextView description;
         CardView cardView;
 
         public ViewHolder(@NonNull View itemView) {
@@ -72,7 +73,7 @@ public class TipsAdapterFirebase extends RecyclerView.Adapter<TipsAdapterFirebas
     @Override
     public void onBindViewHolder(@NonNull TipsAdapterFirebase.ViewHolder holder, int position) {
         holder.textView.setText(tipsList.get(position).getTitle());
-
+//        holder.description.setText(tipsList.get(position).getDescription());
         Glide.with(mContext)
                 .load(tipsList.get(position).getImage())
                 .into(holder.imageView);

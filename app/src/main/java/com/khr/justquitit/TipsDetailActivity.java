@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -59,7 +60,9 @@ public class TipsDetailActivity extends AppCompatActivity {
 
         tvTitle.setText(intent.getStringExtra("tipsName"));
         tvDescription.setText(intent.getStringExtra("tipsDetail"));
-        img.setImageResource(getIntent().getIntExtra("image" ,0));
+//        img.setImageResource(getIntent().getIntExtra("image" ,0));
+        String image = intent.getStringExtra("image");
+        Glide.with(TipsDetailActivity.this).load(image).into(img);
 
 //        fAuth = FirebaseAuth.getInstance();
 //         if (fAuth.getCurrentUser() != null){
