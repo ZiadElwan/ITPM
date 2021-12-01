@@ -1,5 +1,8 @@
 package com.khr.justquitit;
 
+import android.content.Context;
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,11 +10,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.WindowManager;
-
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,11 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.khr.justquitit.adapter.TipsAdapterFirebase;
-import com.khr.justquitit.adapter.TipsRecyclerViewAdapter;
-import com.khr.justquitit.databinding.ActivityQuitSmokingTipsBinding;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class QuitSmokingTipsFirebase extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -56,7 +51,7 @@ public class QuitSmokingTipsFirebase extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
 
         linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
+
         recyclerView.setHasFixedSize(true);
         
         reference = FirebaseDatabase.getInstance().getReference();
@@ -79,11 +74,12 @@ public class QuitSmokingTipsFirebase extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     TipsFirebase tipsFirebase = new TipsFirebase();
 
-                    tipsFirebase.setImage( snapshot.child("Image").getValue().toString());
-                    tipsFirebase.setTitle( snapshot.child("Title").getValue().toString());
+                    tipsFirebase.setImage( dataSnapshot.child("Image").getValue().toString());
+                    tipsFirebase.setTitle( dataSnapshot.child("Title").getValue().toString());
                     tipsList.add(tipsFirebase);
                 }
                 tipsAdapterFirebase = new TipsAdapterFirebase(getApplicationContext(), tipsList);
+                recyclerView.setLayoutManager(linearLayoutManager);
                 recyclerView.setAdapter(tipsAdapterFirebase);
                 tipsAdapterFirebase.notifyDataSetChanged();
             }

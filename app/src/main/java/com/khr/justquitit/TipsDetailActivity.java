@@ -23,8 +23,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.khr.justquitit.databinding.ActivityTipsDetailBinding;
-import com.khr.justquitit.databinding.TipsDetailBinding;
+//import com.khr.justquitit.databinding.ActivityTipsDetailBinding;
+//import com.khr.justquitit.databinding.TipsDetailBinding;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -33,7 +33,7 @@ public class TipsDetailActivity extends AppCompatActivity {
     boolean isInMyFavourite = false;
     String tipsId;
     private FirebaseAuth fAuth;
-    private TipsDetailBinding binding;
+//    private TipsDetailBinding binding;
 
 
     @Override

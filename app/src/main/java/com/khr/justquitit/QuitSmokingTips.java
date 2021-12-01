@@ -1,24 +1,23 @@
 package com.khr.justquitit;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 import com.khr.justquitit.adapter.TipsRecyclerViewAdapter;
-import com.khr.justquitit.databinding.ActivityQuitSmokingTipsBinding;
+//import com.khr.justquitit.databinding.ActivityQuitSmokingTipsBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class QuitSmokingTips extends AppCompatActivity {
     LinearLayoutManager linearLayoutManager;
-    private ActivityQuitSmokingTipsBinding binding;
+//    private ActivityQuitSmokingTipsBinding binding;
     private FirebaseAuth fAuth;
 
     @Override
