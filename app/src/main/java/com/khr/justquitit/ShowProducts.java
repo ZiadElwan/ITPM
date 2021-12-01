@@ -1,5 +1,6 @@
 package com.khr.justquitit;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,12 +9,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.khr.justquitit.adapter.ProductRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShowProducts extends AppCompatActivity {
+
+    RecyclerView recyclerView;
+    DatabaseReference databaseReference;
+    ArrayList<ProductList> productLists;
+    GridLayoutManager gridLayoutManager;
+    ProductRecyclerViewAdapter productRecyclerViewAdapter;
 
 
     @Override
@@ -26,18 +39,70 @@ public class ShowProducts extends AppCompatActivity {
         ActionBar myActionbar = getSupportActionBar();
         myActionbar.setDisplayHomeAsUpEnabled(true);
 
+        recyclerView = findViewById(R.id.recyclerview);
+        gridLayoutManager = new GridLayoutManager(this,2);
+        //recyclerView.setLayoutManager(gridLayoutManager);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        List<ProductList> productsList = getAllProductInfor();
-        ProductRecyclerViewAdapter productRecyclerViewAdapter = new ProductRecyclerViewAdapter(ShowProducts.this, productsList);
-        recyclerView.setLayoutManager(new GridLayoutManager(ShowProducts.this, 2));
-        recyclerView.setAdapter(productRecyclerViewAdapter);
+        //Firebase
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        productLists = new ArrayList<>();
+        //Clear arraylist
+        ClearAll();
+
+        //Get data method
+        getAllProductInfor();
 
     }
 
+    //Get data from firebase
+    private void getAllProductInfor(){
+        Query query = databaseReference.child("Products");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ClearAll();
+                for (DataSnapshot snapshot:dataSnapshot.getChildren()){
+                    ProductList productList = new ProductList();
+
+                    productList.setProductname(snapshot.child("name").getValue().toString());
+                    productList.setImageurl(snapshot.child("image").getValue().toString());
+                    productList.setProductdescription(snapshot.child("description").getValue().toString());
+                    productList.setLinkUrl(snapshot.child("link").getValue().toString());
+
+                    productLists.add(productList);
+                }
+
+                ProductRecyclerViewAdapter productRecyclerViewAdapter = new ProductRecyclerViewAdapter(getApplicationContext(), productLists);
+                recyclerView.setLayoutManager(new GridLayoutManager(ShowProducts.this, 2));
+                recyclerView.setAdapter(productRecyclerViewAdapter);
+                productRecyclerViewAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+    }
+
+    private void ClearAll(){
+        if (productLists != null){
+            productLists.clear();
+
+            if (productRecyclerViewAdapter != null){
+                productRecyclerViewAdapter.notifyDataSetChanged();
+            }
+        }
+        productLists = new ArrayList<>();
+    }
 
     //Juz testing after that will retrieve data from firebase
-    private List<ProductList> getAllProductInfor(){
+    /*private List<ProductList> getAllProductInfor(){
         List<ProductList> allProduct = new ArrayList<ProductList>();
         allProduct.add(new ProductList("Habitrol Patch S1", R.drawable.habitrol, "Habitrol Nicotine Patches come in three decreasing nicotine levels. During our 8-week step-down program, you’ll work your way through these steps, gradually reducing your nicotine dependency and improving your chances of quitting. \n" +
                 "\n" +
@@ -73,5 +138,5 @@ public class ShowProducts extends AppCompatActivity {
                 "It is made from natural plant extracts. suppressing the taste of tobacco by the taste of botanicals, influencing people's sense of smell and taste, make the person dislike smoking, so as to get rid of the psychological dependence on cigarettes."));
 
         return allProduct;
-    }
+    }*/
 }

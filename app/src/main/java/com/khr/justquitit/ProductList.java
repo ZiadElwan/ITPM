@@ -2,37 +2,46 @@ package com.khr.justquitit;
 
 public class ProductList {
     String productname;
-    int productimage;
+    String imageurl;
     String productdescription;
+    String linkUrl;
 
-
-    public ProductList(String productname, int productimage, String productdescription) {
+    public ProductList() {
         this.productname = productname;
-        this.productimage = productimage;
+        this.imageurl = imageurl;
         this.productdescription = productdescription;
+        this.linkUrl = linkUrl;
     }
 
-    public String getName() {
+    public String getProductname() {
         return productname;
     }
 
-    public void setName(String productname) {
+    public void setProductname(String productname) {
         this.productname = productname;
     }
 
-    public int getImage() {
-        return productimage;
+    public String getImageurl() {
+        return imageurl;
     }
 
-    public void setImage(int productimage) {
-        this.productimage = productimage;
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
     }
 
-    public String getDescription() {
+    public String getProductdescription() {
         return productdescription;
     }
 
-    public void setDescription(String productdescription) {
+    public void setProductdescription(String productdescription) {
         this.productdescription = productdescription;
+    }
+
+    public String getLinkUrl() {
+        return linkUrl;
+    }
+
+    public void setLinkUrl(String linkUrl) {
+        this.linkUrl = linkUrl;
     }
 }

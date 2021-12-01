@@ -16,8 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
+//import com.google.firebase.storage.FirebaseStorage;
+//import com.google.firebase.storage.StorageReference;
 import com.khr.justquitit.adapter.TipsAdapterFirebase;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class QuitSmokingTipsFirebase extends AppCompatActivity {
     RecyclerView recyclerView;
     private DatabaseReference reference;
-    private StorageReference ref;
+    //private StorageReference ref;
     private ArrayList<TipsFirebase>tipsList;
 
     private Context mContext;
@@ -55,7 +55,7 @@ public class QuitSmokingTipsFirebase extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         
         reference = FirebaseDatabase.getInstance().getReference();
-        ref = FirebaseStorage.getInstance().getReference();
+        //ref = FirebaseStorage.getInstance().getReference();
         
         tipsList = new ArrayList<>();
 
