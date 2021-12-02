@@ -64,59 +64,38 @@ public class Savings extends AppCompatActivity {
         imgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 showDialog();
-
-                //-------------------------------------------------------------------------------------------
-               /* EditText addSaving = new EditText(view.getContext());
-                AlertDialog.Builder addSavingDialog = new AlertDialog.Builder(view.getContext());
-                addSavingDialog.setTitle("Add Saving");
-                addSavingDialog.setMessage("Enter amount(RM) you want to save");
-                addSavingDialog.setView(addSaving);
-                addSavingDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-
-                addSavingDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        String addedSaving = addSaving.getText().toString();
-
-                        //add the action later
-
-
-
-                    }
-                });
-
-                addSavingDialog.create().show();
-                //-------------------------------------------------------------------------------------------
-*/
             }
         });
+
+        savingArray = PrefConfig.readListFromPref(this);
+        if(savingArray == null){
+            savingArray = new ArrayList<>();
+        }
 
 
         InitializeCardView();
     }
-
     private void InitializeCardView() {
         recyclerView = findViewById(R.id.recycleviewCard);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        savingArray = new ArrayList<>();
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        savingAdapter = new SavingHistoryAdapter(this, savingArray);
+        savingArray = PrefConfig.readListFromPref(this);
+        if(savingArray == null){
+            savingArray = new ArrayList<>();
+        }
+
+        //savingArray = new ArrayList<>();
+
+        savingAdapter = new SavingHistoryAdapter(getApplicationContext(), savingArray);
         recyclerView.setAdapter(savingAdapter);
 
         //add ItemDecoration
         recyclerView.addItemDecoration(new SpacingItemDecoration(VERTICAL_ITEM_SPACE));
 
         //test 1 2 3
-        CreateDataForCard();
+        //CreateDataForCard();
     }
-
     //Test data. Nnti tukar kepada Firebase Realtime guna database trigger
     private void CreateDataForCard() {
         SavingHistory saving = new SavingHistory("15/11/2021", "Successfully Avoid Smoking", "RM 15.00");
@@ -144,7 +123,7 @@ public class Savings extends AppCompatActivity {
 
     //--------------------------------------------------------------------------------------------------------------------------------------
 
-    //custom pop up dialog ---> test
+    //custom pop up dialog ---> official
     private void showDialog() {
         Dialog dialog = new Dialog(this, R.style.DialogStyle);
         dialog.setContentView(R.layout.layout_custom_dialog);
@@ -164,28 +143,28 @@ public class Savings extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+                //get the user input
+                String date = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
                 String notes = savingNotes.getText().toString();
                 String money = savingRM.getText().toString();
 
+                //Save user input inside ArrayList<SavingHistory>
                 SavingHistory saving = new SavingHistory(date, notes, "RM " + money);
                 savingArray.add(saving);
+                //Supposedly make the ArrayList permanentl  inside the user data.
+                PrefConfig.writeListInPref(getApplicationContext(), savingArray);
                 dialog.dismiss();
-
             }
         });
-
         buttonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
             }
         });
-
         dialog.show();
     }
 }
@@ -201,13 +180,11 @@ public class Savings extends AppCompatActivity {
                 a.addCategory(Intent.CATEGORY_HOME);
                 a.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(a);
-
             }
         });
         alertDlg.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
             }
         });
         alertDlg.create().show();
