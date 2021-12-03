@@ -2,6 +2,7 @@ package com.khr.justquitit;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -10,6 +11,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.khr.justquitit.adapter.TipsAdapterFirebase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class QuitSmokingTipsFirebase extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -77,6 +82,7 @@ public class QuitSmokingTipsFirebase extends AppCompatActivity {
                     tipsFirebase.setImage( dataSnapshot.child("Image").getValue().toString());
                     tipsFirebase.setTitle( dataSnapshot.child("Title").getValue().toString());
                     tipsFirebase.setDescription(dataSnapshot.child("Description").getValue().toString());
+                    tipsFirebase.setTipsId(dataSnapshot.child("tipsId").getValue().toString());
                     tipsList.add(tipsFirebase);
                 }
                 tipsAdapterFirebase = new TipsAdapterFirebase(getApplicationContext(), tipsList);
@@ -102,6 +108,56 @@ public class QuitSmokingTipsFirebase extends AppCompatActivity {
         }
         tipsList = new ArrayList<>();
     }
+
+    public static void addToFavourite(Context context, String tipsId) {
+        FirebaseAuth fAuth = FirebaseAuth.getInstance();
+        if (fAuth.getCurrentUser() == null) {
+            Toast.makeText(context, "You're not logged in", Toast.LENGTH_SHORT).show();
+        } else {
+            HashMap<String, Object> hashMap = new HashMap<>();
+            hashMap.put("tipsId", "" + tipsId);
+
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("UserData");
+            reference.child(fAuth.getUid()).child("FavouriteTips").child(tipsId)
+                    .setValue(hashMap)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(context, "Added to your favourite list", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(context, "Failed to add to favourite list due to" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+
+    public static void removeFromFavourite(Context context, String tipsId) {
+        FirebaseAuth fAuth = FirebaseAuth.getInstance();
+        if (fAuth.getCurrentUser() == null) {
+            Toast.makeText(context, "You're not logged in", Toast.LENGTH_SHORT).show();
+        } else {
+
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("UserData");
+            reference.child(fAuth.getUid()).child("FavouriteTips").child(tipsId)
+                    .removeValue()
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(context, "Removed from your favourite list", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(context, "Failed to remove from favourite list due to" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+
+
 
 //    private List<Tips> getAllTips() {
 //        List<Tips> tips = new ArrayList<Tips>();
@@ -129,3 +185,4 @@ public class QuitSmokingTipsFirebase extends AppCompatActivity {
 //        return tips;
 //    }
 }
+
