@@ -65,8 +65,8 @@
                     android:id="@+id/saving_notes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="hint"
-                    android:textColor="@color/colorWhite"
+                    android:hint="Notes"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,8 +86,8 @@
                     android:id="@+id/saving_rm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="hint"
-                    android:textColor="@color/colorWhite" />
+                    android:hint="RM"
+                    android:textColor="@color/colorPrimaryDark" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
