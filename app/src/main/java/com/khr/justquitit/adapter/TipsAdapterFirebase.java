@@ -2,11 +2,9 @@ package com.khr.justquitit.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.icu.text.Transliterator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,21 +14,11 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.khr.justquitit.QuitSmokingTips;
 import com.khr.justquitit.R;
-import com.khr.justquitit.Tips;
 import com.khr.justquitit.TipsDetailActivity;
 import com.khr.justquitit.TipsFirebase;
-import com.khr.justquitit.databinding.TipsRowBinding;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TipsAdapterFirebase extends RecyclerView.Adapter<TipsAdapterFirebase.ViewHolder> {
     private static final String  Tag = "RecyclerView";
@@ -43,16 +31,33 @@ public class TipsAdapterFirebase extends RecyclerView.Adapter<TipsAdapterFirebas
         this.tipsList = tipsList;
     }
 
-    public class  ViewHolder extends RecyclerView.ViewHolder {
+    public class  ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView imageView;
         TextView textView;
+        TextView description;
+        CardView cardView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            cardView = itemView.findViewById(R.id.card_container);
             imageView = itemView.findViewById(R.id.image_tips);
             textView = itemView.findViewById(R.id.tv_tips);
 
+            itemView.setOnClickListener(this);
+
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            Toast.makeText(view.getContext(),"Tips: " + tipsList.get(getAdapterPosition()).getTitle(), Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(view.getContext(), TipsDetailActivity.class);
+            intent.putExtra("tipsName", tipsList.get(getAdapterPosition()).getTitle());
+            intent.putExtra("tipsDetail", tipsList.get(getAdapterPosition()).getDescription());
+            intent.putExtra("image", tipsList.get(getAdapterPosition()).getImage());
+            view.getContext().startActivity(intent);
         }
     }
 
@@ -68,6 +73,7 @@ public class TipsAdapterFirebase extends RecyclerView.Adapter<TipsAdapterFirebas
     @Override
     public void onBindViewHolder(@NonNull TipsAdapterFirebase.ViewHolder holder, int position) {
         holder.textView.setText(tipsList.get(position).getTitle());
+//        holder.description.setText(tipsList.get(position).getDescription());
         Glide.with(mContext)
                 .load(tipsList.get(position).getImage())
                 .into(holder.imageView);

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.JustQuitIt">
         <activity
             android:name=".TipsDetailActivity"
-            android:parentActivityName=".QuitSmokingTips" />
+            android:parentActivityName=".QuitSmokingTipsFirebase" />
         <activity android:name=".main_menu" />
         <activity android:name=".ProductDetails" />
         <activity android:name=".user_feedback_page" />
@@ -34,9 +34,13 @@
             android:name=".HealthProgress"
             android:parentActivityName=".main_menu" />
         <activity android:name=".Savings" />
+<!--        <activity-->
+<!--            android:name=".QuitSmokingTips"-->
+<!--            android:parentActivityName=".main_menu" />-->
         <activity
-            android:name=".QuitSmokingTips"
+            android:name=".QuitSmokingTipsFirebase"
             android:parentActivityName=".main_menu" />
+
         <activity android:name=".first_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

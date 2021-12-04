@@ -1,16 +1,20 @@
 package com.khr.justquitit;
 
 public class TipsFirebase {
-    String Title, Description, Image;
+    String Title;
+    String Description;
+    String Image;
+    String tipsId;
 
     TipsFirebase(){
 
     }
 
-    public TipsFirebase(String title, String description, String image) {
+    public TipsFirebase(String title, String description, String image, String tipsID) {
         Title = title;
         Description = description;
         Image = image;
+        tipsId = tipsID;
     }
 
     public String getTitle() {
@@ -35,5 +39,13 @@ public class TipsFirebase {
 
     public void setImage(String image) {
         Image = image;
+    }
+
+    public String getTipsId() {
+        return tipsId;
+    }
+
+    public void setTipsId(String tipsId) {
+        this.tipsId = tipsId;
     }
 }
