@@ -66,3 +66,4 @@ public class HealthProgress extends AppCompatActivity {
         recoveryArray.add(health);
     }
 }
+

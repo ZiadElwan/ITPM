@@ -22,6 +22,16 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/dashboardblue" />
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="349dp"
@@ -91,14 +101,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="Health Progress" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="244dp"
-        android:layout_height="185dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
-        app:srcCompat="@drawable/percent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,4 +15,9 @@
     <color name="colorDarkSemiTransparent">#C6000000</color>
     <color name="colorTextPrimary">#212121</color>
     <color name="shadowColor">#2E2E2E</color>
+
+    <color name="mycolorPrimary">#000</color>
+    <color name="mycolorPrimaryDark">#000</color>
+    <color name="mycolorAccent">#ff4500</color>
+
 </resources>
