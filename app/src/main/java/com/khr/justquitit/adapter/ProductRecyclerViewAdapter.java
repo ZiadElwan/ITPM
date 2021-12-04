@@ -93,14 +93,6 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
             }
         });*/
 
-        /*holder.view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, ProductDetails.class);
-                intent.putExtra("productName",productLists.get(position).getProductname());
-                context.startActivity(intent);
-            }
-        });*/
 
     }
 

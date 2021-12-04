@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -38,44 +39,27 @@ public class ProductDetails extends AppCompatActivity {
 
         tvproductName.setText(intent.getStringExtra("productName"));
         tvproductDescription.setText(intent.getStringExtra("productDescription"));
+
         String image = intent.getStringExtra("productImage");
         Glide.with(ProductDetails.this).load(image).into(imageView);
 
 
-        /*databaseReference.child("Products").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    String productName = dataSnapshot.child("name").getValue().toString();
-                    String productImage = dataSnapshot.child("image").getValue().toString();
-                    String productDescription = dataSnapshot.child("description").getValue().toString();
-                    String productLink = dataSnapshot.child("link").getValue().toString();
-
-
-                    tvproductName.setText(productName);
-                    Glide.with(getApplicationContext()).load(productImage).into(imageView);
-                    tvproductDescription.setText(productDescription);
-                    //floatingActionButton.setClickable(true);
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });*/
-
-
-        /*floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String link = intent.getStringExtra("productLink");
+                gotoUrl(link);
             }
-        });*/
+        });
 
 
+
+    }
+
+    //link to product website
+    private void gotoUrl(String link) {
+        Uri uri = Uri.parse(link);
+        startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
 
 }
