@@ -6,14 +6,18 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 
 import com.khr.justquitit.adapter.RecoveryHistoryAdapter;
+import com.khr.justquitit.databinding.ActivityHealthProgressBinding;
 import com.khr.justquitit.utils.SpacingItemDecoration;
 
 import java.util.ArrayList;
 
 public class HealthProgress extends AppCompatActivity {
+
+    ActivityHealthProgressBinding binding;
 
     private RecyclerView recyclerView;
     private RecoveryHistoryAdapter recoveryAdapter;
@@ -23,7 +27,10 @@ public class HealthProgress extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_health_progress);
+        binding=ActivityHealthProgressBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        startAnimationCounter(0,90);
 
         Toolbar toolbar = findViewById(R.id.health_toolbar);
         setSupportActionBar(toolbar);
@@ -31,6 +38,27 @@ public class HealthProgress extends AppCompatActivity {
         myActionbar.setDisplayHomeAsUpEnabled(true);
 
         InitializeCardView();
+    }
+
+    public void startAnimationCounter(int start_no, int end_no)
+    {
+        ValueAnimator animator = ValueAnimator.ofInt(start_no,end_no);
+        animator.setDuration(5000);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+
+                binding.tvCounter.setText(animation.getAnimatedValue().toString()+"");
+                binding.progressbar.setProgress(Integer.parseInt(animation.getAnimatedValue().toString()));
+            }
+        });
+        animator.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding=null;
     }
 
     private void InitializeCardView() {
