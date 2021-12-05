@@ -51,6 +51,17 @@
         app:layout_constraintStart_toStartOf="@+id/progressbar"
         app:layout_constraintTop_toTopOf="@+id/progressbar" />
 
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="101dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/progressbar"
+        app:srcCompat="@drawable/healthicon" />
+
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
@@ -84,19 +95,20 @@
             android:layout_height="match_parent" />
     </LinearLayout>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageView6"
         android:layout_width="351dp"
         android:layout_height="63dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
-        android:background="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/screen_background_light" />
+        app:srcCompat="@android:drawable/screen_background_light"
+        app:shapeAppearanceOverlay="@style/roundimageview"
+        />
 
     <TextView
         android:id="@+id/textView14"
