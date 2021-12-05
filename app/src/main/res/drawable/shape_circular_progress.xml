@@ -5,9 +5,9 @@
     >
 
     <shape
-        android:innerRadiusRatio="2.5"
+        android:innerRadiusRatio="3"
         android:shape="ring"
-        android:thickness="20dp"
+        android:thickness="15dp"
         android:useLevel="true"
         >
 
