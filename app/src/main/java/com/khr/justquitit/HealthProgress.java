@@ -58,6 +58,7 @@ public class HealthProgress extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        binding = null;
     }
 
     private void InitializeCardView() {
