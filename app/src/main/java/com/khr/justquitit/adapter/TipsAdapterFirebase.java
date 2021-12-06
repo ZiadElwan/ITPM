@@ -57,6 +57,7 @@ public class TipsAdapterFirebase extends RecyclerView.Adapter<TipsAdapterFirebas
             intent.putExtra("tipsName", tipsList.get(getAdapterPosition()).getTitle());
             intent.putExtra("tipsDetail", tipsList.get(getAdapterPosition()).getDescription());
             intent.putExtra("image", tipsList.get(getAdapterPosition()).getImage());
+            intent.putExtra("tipsId", tipsList.get(getAdapterPosition()).getTipsId());
             view.getContext().startActivity(intent);
         }
     }

@@ -43,7 +43,13 @@ public class TipsDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tips_detail);
-        tipsId = getIntent().getStringExtra("tipsId");
+
+        fAuth = FirebaseAuth.getInstance();
+        if (fAuth.getCurrentUser() != null){
+            checkIsFavourite();
+        }
+
+
 
         Toolbar toolbar = findViewById(R.id.toolbar_new);
         setSupportActionBar(toolbar);
@@ -53,6 +59,7 @@ public class TipsDetailActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
+
         TextView tvTitle = findViewById(R.id.img_title);
         ImageView img = findViewById(R.id.img_Detail);
         TextView tvDescription = findViewById(R.id.img_Desc);
@@ -65,33 +72,34 @@ public class TipsDetailActivity extends AppCompatActivity {
 //        img.setImageResource(getIntent().getIntExtra("image" ,0));
         String image = intent.getStringExtra("image");
         Glide.with(TipsDetailActivity.this).load(image).into(img);
+        tipsId = getIntent().getStringExtra("tipsId");
 
-//        fAuth = FirebaseAuth.getInstance();
-//         if (fAuth.getCurrentUser() != null){
-//            checkIsFavourite();
-//        }
+
+
+
 ////
-//       binding.btnFavourite.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if(fAuth.getCurrentUser() == null){
-//                    Toast.makeText(TipsDetailActivity.this,"You're not logged in", Toast.LENGTH_SHORT).show();
-//                }
-//                else{
-//                    if(isInMyFavourite){
-//                        QuitSmokingTipsFirebase.removeFromFavourite(TipsDetailActivity.this, tipsId);
-//                    }
-//                    else{
-//                        QuitSmokingTipsFirebase.addToFavourite(TipsDetailActivity.this, tipsId);
-//                    }
-//                }
-//            }
-//        });
+       binding.btnFavourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(fAuth.getCurrentUser() == null){
+                    Toast.makeText(TipsDetailActivity.this,"You're not logged in", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    if(isInMyFavourite){
+                        MyApplication.removeFromFavourite(TipsDetailActivity.this, tipsId);
+                    }
+                    else{
+                        MyApplication.addToFavourite(TipsDetailActivity.this, tipsId);
+                    }
+                }
+            }
+        });
     }
 
 
 
     private void checkIsFavourite() {
+//        FirebaseAuth fAuth = FirebaseAuth.getInstance();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("UserData");
 
@@ -105,11 +113,14 @@ public class TipsDetailActivity extends AppCompatActivity {
                             binding.btnFavourite.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_baseline_favorite_24));
 
                         }
+                        else{
+                            binding.btnFavourite.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_baseline_favorite_border_24));
+                        }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-                        binding.btnFavourite.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_baseline_favorite_border_24));
+
                     }
                 });
 

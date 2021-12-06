@@ -159,6 +159,7 @@ public class QuitSmokingTipsFirebase extends AppCompatActivity {
 
 
 
+
 //    private List<Tips> getAllTips() {
 //        List<Tips> tips = new ArrayList<Tips>();
 //        tips.add(new Tips("Think Positive", R.drawable.tips1, "You might have tried to quit smoking before and not managed it, but don't let that put you off. \n" +
