@@ -33,7 +33,7 @@ import java.util.Objects;
 
 public class TipsDetailActivity extends AppCompatActivity {
     boolean isInMyFavourite = false;
-    String tipsId;
+    String tipsId = "";
     private FirebaseAuth fAuth;
     private Context context;
     private TipsDetailBinding binding;
@@ -42,7 +42,9 @@ public class TipsDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tips_detail);
+        binding = TipsDetailBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
 
         fAuth = FirebaseAuth.getInstance();
         if (fAuth.getCurrentUser() != null){
@@ -93,7 +95,7 @@ public class TipsDetailActivity extends AppCompatActivity {
                     }
                 }
             }
-        });
+       });
     }
 
 
