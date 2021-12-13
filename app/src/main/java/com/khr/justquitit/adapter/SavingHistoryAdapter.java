@@ -59,6 +59,7 @@ public class SavingHistoryAdapter extends RecyclerView.Adapter<SavingHistoryAdap
         private TextView txtsavingDate, txtsavingActivity, txtsaving;
         CardView cardView;
 
+
         public saving_Holder(@NonNull View itemView){
             super(itemView);
             cardView = itemView.findViewById(R.id.card_contain);
