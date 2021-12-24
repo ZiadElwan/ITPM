@@ -141,6 +141,7 @@ public class main_menu extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_new);
         setSupportActionBar(toolbar);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
+        actionBarDrawerToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
@@ -188,11 +189,11 @@ public class main_menu extends AppCompatActivity {
             return true;
         }
 
-        else if(id == R.id.nav_changepwrd){
-            Intent intent2 = new Intent(main_menu.this, Change_password.class);
-            startActivity(intent2);
-            return true;
-        }
+//        else if(id == R.id.nav_changepwrd){
+//            Intent intent2 = new Intent(main_menu.this, Change_password.class);
+//            startActivity(intent2);
+//            return true;
+//        }
 
         switch (item.getItemId()){
 
