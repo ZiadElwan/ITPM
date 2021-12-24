@@ -67,7 +67,7 @@ public class main_menu extends AppCompatActivity {
 
                     case  R.id.nav_tips:
 
-                        Intent intent2 = new Intent(main_menu.this, QuitSmokingTipsFirebase.class);
+                        Intent intent2 = new Intent(main_menu.this, fav_tips.class);
                         startActivity(intent2);
 
                         break;
@@ -211,10 +211,10 @@ public class main_menu extends AppCompatActivity {
                 startActivity(intent1);
                 break;
 
-            case R.id.nav_changepwrd:
-                Intent intent2 = new Intent(main_menu.this, Change_password.class);
-                startActivity(intent2);
-                break;
+//            case R.id.nav_changepwrd:
+//                Intent intent2 = new Intent(main_menu.this, Change_password.class);
+//                startActivity(intent2);
+//                break;
 
             /*case R.id.nav_setting:
                 Intent intent3 = new Intent(main_menu.this, Setting.class);

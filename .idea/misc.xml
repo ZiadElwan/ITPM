@@ -10,6 +10,20 @@
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_savings.xml" value="0.264" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/item_card.xml" value="0.25416666666666665" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/main_menu.xml" value="0.264" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_fav_tips.xml" value="0.2" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_main_menu.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_notification.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_product_details.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_quit_smoking_tips.xml" value="0.2" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_savings.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_swipetab.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_tips_detail.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/fav_row.xml" value="0.176" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/favtips_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/tips_detail.xml" value="0.2" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/tips_row.xml" value="0.176" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/menu/main_menu.xml" value="0.264" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JustQuitIt/app/src/main/res/menu/nav_menu.xml" value="0.4" />
         <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/drawable/shape_circle_background.xml" value="0.2203125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/drawable/shape_circular_progress.xml" value="0.2203125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_health_progress.xml" value="0.22" />
@@ -53,7 +67,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

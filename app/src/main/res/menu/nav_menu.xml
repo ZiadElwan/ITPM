@@ -12,7 +12,7 @@
         <item
             android:id="@+id/nav_tips"
             android:icon="@drawable/ic_baseline_push_pin_24"
-            android:title="Bookmark Tips" />
+            android:title="Favourite Tips" />
         <item
             android:id="@+id/nav_healthprogress"
             android:icon="@drawable/training_50px"
