@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,19 +25,22 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.khr.justquitit.adapter.AdapterFavTips;
 import com.khr.justquitit.databinding.TipsDetailBinding;
 //import com.khr.justquitit.databinding.ActivityTipsDetailBinding;
 //import com.khr.justquitit.databinding.TipsDetailBinding;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
 public class TipsDetailActivity extends AppCompatActivity {
     boolean isInMyFavourite = false;
-    String tipsId = "";
+    String tipsId="";
     private FirebaseAuth fAuth;
     private Context context;
     private TipsDetailBinding binding;
+
 
 
     @Override
@@ -45,13 +49,15 @@ public class TipsDetailActivity extends AppCompatActivity {
         binding = TipsDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        Intent intent = getIntent();
+        tipsId = intent.getStringExtra("tipsId");
 
         fAuth = FirebaseAuth.getInstance();
         if (fAuth.getCurrentUser() != null){
             checkIsFavourite();
         }
 
-
+//        loadFavTips();
 
         Toolbar toolbar = findViewById(R.id.toolbar_new);
         setSupportActionBar(toolbar);
@@ -60,7 +66,7 @@ public class TipsDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        Intent intent = getIntent();
+
 
         TextView tvTitle = findViewById(R.id.img_title);
         ImageView img = findViewById(R.id.img_Detail);
@@ -74,7 +80,7 @@ public class TipsDetailActivity extends AppCompatActivity {
 //        img.setImageResource(getIntent().getIntExtra("image" ,0));
         String image = intent.getStringExtra("image");
         Glide.with(TipsDetailActivity.this).load(image).into(img);
-        tipsId = getIntent().getStringExtra("tipsId");
+
 
 
 
@@ -88,10 +94,10 @@ public class TipsDetailActivity extends AppCompatActivity {
                 }
                 else{
                     if(isInMyFavourite){
-                        MyApplication.removeFromFavourite(TipsDetailActivity.this, tipsId);
+                        QuitSmokingTipsFirebase.removeFromFavourite(TipsDetailActivity.this, tipsId);
                     }
                     else{
-                        MyApplication.addToFavourite(TipsDetailActivity.this, tipsId);
+                        QuitSmokingTipsFirebase.addToFavourite(TipsDetailActivity.this, tipsId);
                     }
                 }
             }

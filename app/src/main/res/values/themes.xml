@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="actionOverflowButtonStyle">@style/IconOverFlow</item>
     </style>
     <style name="Theme.JustQuitIt.NoActionBar">
         <item name="drawerArrowStyle">@style/DrawerIcon</item>
@@ -30,6 +31,10 @@
     <style name="DialogStyle" parent="Theme.AppCompat.Dialog">
         <item name="android:windowMinWidthMajor">80%</item>
         <item name="android:windowMinWidthMinor">80%</item>
+    </style>
+
+    <style name="IconOverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@android:color/white</item>
     </style>
 
 </resources>
