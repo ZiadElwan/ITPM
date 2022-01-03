@@ -79,6 +79,17 @@ public class Savings extends AppCompatActivity {
         InitializeCardView();
         //saving total algo
         tvTotal = findViewById(R.id.tv_total);
+
+        totalText();
+
+
+//       ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+ //       itemTouchHelper.attachToRecyclerView(recyclerView);
+
+
+    }
+
+    public void totalText(){
         if(savingArray != null) {
             int total = 0;
             for (int i = 0; i < savingArray.size(); i++) {
@@ -94,14 +105,9 @@ public class Savings extends AppCompatActivity {
         }else if (savingArray == null){
             tvTotal.setText("0.00");
         }
-
-       // ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
-   //     itemTouchHelper.attachToRecyclerView(recyclerView);
-
-
     }
 /*
-    String deletedSaving = null;
+    SavingHistory deletedSaving = null;
 //    List<String> archived = new ArrayList<>();
 
     ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
@@ -114,13 +120,10 @@ public class Savings extends AppCompatActivity {
         public void onSwiped(@NonNull final RecyclerView.ViewHolder viewHolder, int direction) {
 
             final int position = viewHolder.getAdapterPosition();
-
-            switch (direction) {
-                case ItemTouchHelper.LEFT:
-                    deletedSaving = savingArray.get(position).toString();
-                    savingArray.remove(position);
-                    SavingHistoryAdapter.notifyItemRemoved(position);
-                    Snackbar.make(recyclerView, deletedSaving, Snackbar.LENGTH_LONG)
+                deletedSaving = savingArray.get(position);
+                savingArray.remove(position);
+                SavingHistoryAdapter.notifyItemRemoved(position);
+                Snackbar.make(recyclerView, deletedSaving, Snackbar.LENGTH_LONG)
                             .setAction("Undo", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
@@ -128,10 +131,6 @@ public class Savings extends AppCompatActivity {
                                     SavingHistoryAdapter.notifyItemInserted(position);
                                 }
                             }).show();
-                    break;
-                case ItemTouchHelper.RIGHT:
-
-                    break;
             }
         }
     }; */
