@@ -3,25 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_change_password.xml" value="0.1" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_health_progress.xml" value="0.25416666666666665" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_main_menu.xml" value="0.264" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_notification.xml" value="0.1" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_product_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_products.xml" value="0.25416666666666665" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_quit_smoking_tips.xml" value="0.25416666666666665" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/activity_savings.xml" value="0.264" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/first_page.xml" value="0.25" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/item_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/layout_custom_dialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/login_page.xml" value="0.2" />
         <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/main_menu.xml" value="0.264" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/drawable/shape_circle_background.xml" value="0.2203125" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/drawable/shape_circular_progress.xml" value="0.2203125" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_health_progress.xml" value="0.22" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_main_menu.xml" value="0.192481884057971" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_notification.xml" value="0.13179347826086957" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_product_details.xml" value="0.13179347826086957" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_products.xml" value="0.17481884057971014" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_savings.xml" value="0.192481884057971" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/activity_survey.xml" value="0.22" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/first_page.xml" value="0.17481884057971014" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/main_menu.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/JustQuitIt/app/src/main/res/layout/main_menu_testing.xml" value="0.192481884057971" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/register_page.xml" value="0.2" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/test_123.xml" value="0.264" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/layout/tips_row.xml" value="0.25" />
+        <entry key="..\:/Umbrella/justquit/app/src/main/res/menu/nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/git3/JustQuitIt/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.2203125" />
         <entry key="..\:/git3/JustQuitIt/app/src/main/res/layout/about_page.xml" value="0.18432971014492755" />
         <entry key="..\:/git3/JustQuitIt/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.18704710144927536" />
@@ -45,6 +43,7 @@
         <entry key="..\:/git3/JustQuitIt/app/src/main/res/layout/header.xml" value="0.18432971014492755" />
         <entry key="..\:/git3/JustQuitIt/app/src/main/res/layout/item_card.xml" value="0.1793478260869565" />
         <entry key="..\:/git3/JustQuitIt/app/src/main/res/layout/item_card2.xml" value="0.1793478260869565" />
+        <entry key="..\:/git3/JustQuitIt/app/src/main/res/layout/layout_custom_dialog.xml" value="0.17255434782608695" />
         <entry key="..\:/git3/JustQuitIt/app/src/main/res/layout/main_menu.xml" value="0.22" />
         <entry key="..\:/git3/JustQuitIt/app/src/main/res/layout/main_menu_testing.xml" value="0.25" />
         <entry key="..\:/git3/JustQuitIt/app/src/main/res/layout/product_grid_layout.xml" value="0.18704710144927536" />

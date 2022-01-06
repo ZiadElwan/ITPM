@@ -64,7 +64,8 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/edit"
                 android:hint="Enter password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="#0B0A0A" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -99,7 +100,8 @@
                 android:layout_height="60dp"
                 android:background="@drawable/edit"
                 android:hint="Enter your email"
-                android:outlineProvider="none" />
+                android:outlineProvider="none"
+                android:textColor="#000000" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

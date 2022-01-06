@@ -18,10 +18,6 @@
             android:icon="@color/colorWhite"
             android:title="Feedback" />
         <item
-            android:id="@+id/nav_changepwrd"
-            android:icon="@color/colorWhite"
-            android:title="Change Password" />
-        <item
             android:id="@+id/nav_logout"
             android:icon="@color/colorWhite"
             android:title="Logout" />

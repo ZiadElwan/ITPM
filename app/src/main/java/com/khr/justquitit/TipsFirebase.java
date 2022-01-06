@@ -5,16 +5,18 @@ public class TipsFirebase {
     String Description;
     String Image;
     String tipsId;
+    boolean favourite;
 
     TipsFirebase(){
 
     }
 
-    public TipsFirebase(String title, String description, String image, String tipsID) {
+    public TipsFirebase(String title, String description, String image, String tipsID,   boolean favourite) {
         Title = title;
         Description = description;
         Image = image;
         tipsId = tipsID;
+        favourite = favourite;
     }
 
     public String getTitle() {
@@ -47,5 +49,13 @@ public class TipsFirebase {
 
     public void setTipsId(String tipsId) {
         this.tipsId = tipsId;
+    }
+
+    public boolean isFavourite() {
+        return favourite;
+    }
+
+    public void setFavourite(boolean favourite) {
+        this.favourite = favourite;
     }
 }

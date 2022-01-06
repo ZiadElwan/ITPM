@@ -32,8 +32,16 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="RM  "
+            android:textColor="#B2EBF2" />
+
+        <TextView
             android:id="@+id/text_saving"
-            android:layout_width="94dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="1dp"
             android:textColor="@color/teal_700"
