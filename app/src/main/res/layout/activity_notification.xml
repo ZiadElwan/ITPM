@@ -8,16 +8,18 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="519dp"
-        android:layout_height="940dp"
-        app:srcCompat="@drawable/bluegeometry"
-        tools:layout_editor_absoluteX="-65dp"
-        tools:layout_editor_absoluteY="-93dp" />
+        android:layout_width="495dp"
+        android:layout_height="890dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bluegeometry" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notification_list"
-        android:layout_width="389dp"
-        android:layout_height="656dp"
+        android:layout_width="409dp"
+        android:layout_height="650dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
