@@ -8,19 +8,33 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="697dp"
-        android:layout_height="970dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:srcCompat="@drawable/bluegeometry"
         tools:layout_editor_absoluteX="-142dp"
         tools:layout_editor_absoluteY="-124dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notification_list"
-        android:layout_width="402dp"
-        android:layout_height="725dp"
+        android:layout_width="387dp"
+        android:layout_height="592dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/notification_toolbar">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/notification_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#006A95CC"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Notification" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

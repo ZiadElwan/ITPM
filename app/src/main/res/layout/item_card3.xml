@@ -11,9 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:orientation="vertical"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp">
+        android:orientation="vertical">
 
 
         <LinearLayout
@@ -27,6 +25,7 @@
                 android:id="@+id/tv_noti"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="You don't smoke from 20 minutes"
                 android:textColor="@color/black"
                 android:textSize="20dp"
@@ -45,7 +44,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:lineSpacingExtra="2sp"
                 android:text="Your blood pressure, pulse rate and the temperature of your hands and feet have returned to normal."
+                android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 

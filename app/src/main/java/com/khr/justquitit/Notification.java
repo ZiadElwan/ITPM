@@ -1,7 +1,9 @@
 package com.khr.justquitit;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,6 +30,11 @@ public class Notification extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+
+        Toolbar toolbar = findViewById(R.id.notification_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar myActionbar = getSupportActionBar();
+        myActionbar.setDisplayHomeAsUpEnabled(true);
 
         recyclerView = findViewById(R.id.notification_list);
         database = FirebaseDatabase.getInstance().getReference("Notification");

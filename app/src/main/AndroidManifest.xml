@@ -25,7 +25,9 @@
         <activity android:name=".login_page" />
         <activity android:name=".smoker_profile" />
         <activity android:name=".MyApplication" />
-        <activity android:name=".Notification" />
+        <activity
+            android:name=".Notification" />
+            android:parentActivityName=".main_menu" />
         <activity
             android:name=".about_page"
             android:parentActivityName=".main_menu" />
