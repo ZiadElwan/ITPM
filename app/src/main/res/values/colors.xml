@@ -19,4 +19,5 @@
     <color name="mycolorPrimary">#000</color>
     <color name="mycolorPrimaryDark">#000</color>
     <color name="mycolorAccent">#ff4500</color>
+    <color name="darkred">#8B0000</color>
 </resources>

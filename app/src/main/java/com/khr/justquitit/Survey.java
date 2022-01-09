@@ -108,7 +108,7 @@ public class Survey extends AppCompatActivity {
             View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.activity_score, (LinearLayout) findViewById(R.id.LinearLayoutScore));
             TextView scoretv = bottomSheetView.findViewById(R.id.tv_score);
             Button restartSurvey = bottomSheetView.findViewById(R.id.btn_restart);
-            Button quitSurvey = bottomSheetView.findViewById(R.id.btn_quit);
+            Button quitSurvey = bottomSheetView.findViewById(R.id.btn_quitsurvey);
             scoretv.setText("Your Score is \n" + currentScore + "/6");
             restartSurvey.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -120,11 +120,12 @@ public class Survey extends AppCompatActivity {
                     bottomSheetDialog.dismiss();
                 }
             });
-            btnquit.setOnClickListener(new View.OnClickListener() {
+            quitSurvey.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(Survey.this, main_menu.class);
                     startActivity(intent);
+                    bottomSheetDialog.dismiss();
                 }
             });
             bottomSheetDialog.setCancelable(false);
