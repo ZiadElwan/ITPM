@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class main_menu extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
     CardView btntips, btnsavings, btnhealth, btnprod;
+    Button btnsurvey;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
@@ -40,6 +42,7 @@ public class main_menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
 
+        btnsurvey = findViewById(R.id.btn_survey);
         btntips = findViewById(R.id.btn_tips);
         btnsavings = findViewById(R.id.btn_savings);
         btnhealth = findViewById(R.id.btn_healthprogress);
@@ -98,6 +101,14 @@ public class main_menu extends AppCompatActivity {
                         break;
                 }
                 return false;
+            }
+        });
+
+        btnsurvey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(main_menu.this, MainSurvey.class);
+                startActivity(intent);
             }
         });
 
