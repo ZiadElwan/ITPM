@@ -1,5 +1,6 @@
 package com.khr.justquitit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import java.util.Random;
 
 public class Survey extends AppCompatActivity {
 
+    Button btnquit;
     private TextView questiontv, questionnumbertv;
     private Button option1btn, option2btn, option3btn, option4btn;
     private ArrayList<SurveyModal>surveyModalArrayList;
@@ -23,6 +25,16 @@ public class Survey extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
+
+        btnquit = findViewById(R.id.btn_quit);
+
+        btnquit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Survey.this, main_menu.class);
+                startActivity(intent);
+            }
+        });
 
         questiontv = findViewById(R.id.question);
         questionnumbertv = findViewById(R.id.tv_questionsattempted);

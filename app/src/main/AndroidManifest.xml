@@ -10,8 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.JustQuitIt"
-        android:name=".Survey">
+        android:theme="@style/Theme.JustQuitIt">
         <activity
             android:name=".fav_tips"
             android:parentActivityName=".main_menu" />
@@ -26,6 +25,7 @@
         <activity android:name=".login_page" />
         <activity android:name=".smoker_profile" />
         <activity android:name=".MyApplication" />
+        <activity android:name=".Survey"/>
         <activity
             android:name=".MainSurvey"
             android:parentActivityName=".main_menu"/>
