@@ -47,6 +47,7 @@
                 android:layout_marginEnd="25sp"
                 android:layout_marginTop="170sp"
                 app:cardCornerRadius="20sp"
+                android:backgroundTint="#A7C7E7"
                 tools:layout_editor_absoluteX="24dp"
                 tools:layout_editor_absoluteY="189dp">
 
@@ -60,9 +61,10 @@
                     android:layout_marginBottom="60sp"
                     android:lineSpacingExtra="2sp"
                     android:text="Fagerstrom Test"
+                    android:textStyle="bold"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="34sp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -78,6 +80,7 @@
                     android:text="There are 6 questions you need to answer. Answer all questions."
                     android:textAlignment="center"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:textSize="20sp" />
 
             </androidx.cardview.widget.CardView>
@@ -97,7 +100,7 @@
                     android:backgroundTint="#3A4D8F"
                     android:text="Start"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
