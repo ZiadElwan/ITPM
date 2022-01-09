@@ -2,11 +2,17 @@ package com.khr.justquitit;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -52,7 +58,7 @@ public class Survey extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (surveyModalArrayList.get(currentPos).getAnswer().trim().toLowerCase().equals(option1btn.getText().toString().trim().toLowerCase())) {
-                currentScore++;
+                    currentScore++;
                 }
                 questionAttempted++;
                 currentPos = random.nextInt(surveyModalArrayList.size());
@@ -97,14 +103,47 @@ public class Survey extends AppCompatActivity {
         });
     }
 
+        private void showBottomSheet() {
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(Survey.this);
+            View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.activity_score, (LinearLayout) findViewById(R.id.LinearLayoutScore));
+            TextView scoretv = bottomSheetView.findViewById(R.id.tv_score);
+            Button restartSurvey = bottomSheetView.findViewById(R.id.btn_restart);
+            Button quitSurvey = bottomSheetView.findViewById(R.id.btn_quit);
+            scoretv.setText("Your Score is \n" + currentScore + "/6");
+            restartSurvey.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    currentPos = random.nextInt(surveyModalArrayList.size());
+                    setDataToViews(currentPos);
+                    questionAttempted = 1;
+                    currentScore = 0;
+                    bottomSheetDialog.dismiss();
+                }
+            });
+            btnquit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Survey.this, main_menu.class);
+                    startActivity(intent);
+                }
+            });
+            bottomSheetDialog.setCancelable(false);
+            bottomSheetDialog.setContentView(bottomSheetView);
+            bottomSheetDialog.show();
+        }
+
     private void setDataToViews(int currentPos){
         questionnumbertv.setText("Questions Attempted : " + questionAttempted + "/6");
-        questiontv.setText(surveyModalArrayList.get(currentPos).getQuestion());
-        option1btn.setText(surveyModalArrayList.get(currentPos).getOption1());
-        option2btn.setText(surveyModalArrayList.get(currentPos).getOption2());
-        option3btn.setText(surveyModalArrayList.get(currentPos).getOption3());
-        option4btn.setText(surveyModalArrayList.get(currentPos).getOption4());
-
+        if(questionAttempted == 6){
+            showBottomSheet();
+        }
+        else{
+            questiontv.setText(surveyModalArrayList.get(currentPos).getQuestion());
+            option1btn.setText(surveyModalArrayList.get(currentPos).getOption1());
+            option2btn.setText(surveyModalArrayList.get(currentPos).getOption2());
+            option3btn.setText(surveyModalArrayList.get(currentPos).getOption3());
+            option4btn.setText(surveyModalArrayList.get(currentPos).getOption4());
+        }
     }
     private void getSurveyQuestion(ArrayList<SurveyModal>surveyModalArrayList) {
         surveyModalArrayList.add(new SurveyModal("How soon after waking do you smoke your first cigarette?", "Within 5 minutes", "5-30 minutes", "31-60 minutes", ">60 minutes", "Within 5 minutes"));
