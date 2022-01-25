@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.animation.ValueAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,8 +24,12 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.khr.justquitit.databinding.ActivityMainMenuBinding;
+import com.khr.justquitit.databinding.MainMenuBinding;
 
 public class main_menu extends AppCompatActivity {
+
+    MainMenuBinding binding;
 
     private long backPressedTime;
     private Toast backToast;
@@ -40,7 +45,10 @@ public class main_menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_menu);
+        binding=MainMenuBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        startAnimationCounter(0,90);
 
         btnsurvey = findViewById(R.id.btn_survey);
         btntips = findViewById(R.id.btn_tips);
@@ -145,6 +153,27 @@ public class main_menu extends AppCompatActivity {
         });
 
 
+    }
+
+    public void startAnimationCounter(int start_no, int end_no)
+    {
+        ValueAnimator animator = ValueAnimator.ofInt(start_no,end_no);
+        animator.setDuration(5000);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+
+                binding.tvcounter2.setText(animation.getAnimatedValue().toString()+"");
+                binding.progressbar2.setProgress(Integer.parseInt(animation.getAnimatedValue().toString()));
+            }
+        });
+        animator.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding = null;
     }
 
     public void setUpToolbar() {
