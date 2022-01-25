@@ -27,7 +27,7 @@ public class HealthProgress extends AppCompatActivity {
     private RecoveryHistoryAdapter recoveryAdapter;
     private ArrayList<RecoveryHistory> recoveryArray;
     private static final int VERTICAL_ITEM_SPACE = 48;
-    ImageButton btnAssessment;
+    //ImageButton btnAssessment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,18 +38,18 @@ public class HealthProgress extends AppCompatActivity {
         startAnimationCounter(0,90);
 
         Toolbar toolbar = findViewById(R.id.health_toolbar);
-        btnAssessment = findViewById(R.id.btn_assessment);
+        //btnAssessment = findViewById(R.id.btn_assessment);
         setSupportActionBar(toolbar);
         ActionBar myActionbar = getSupportActionBar();
         myActionbar.setDisplayHomeAsUpEnabled(true);
 
-        btnAssessment.setOnClickListener(new View.OnClickListener() {
+        /*btnAssessment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HealthProgress.this, MainSurvey.class);
                 startActivity(intent);
             }
-        });
+        }); */
 
         InitializeCardView();
     }
