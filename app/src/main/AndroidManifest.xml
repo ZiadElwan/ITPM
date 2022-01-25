@@ -28,7 +28,7 @@
         <activity android:name=".Survey"/>
         <activity
             android:name=".MainSurvey"
-            android:parentActivityName=".main_menu"/>
+            android:parentActivityName=".HealthProgress"/>
         <activity
             android:name=".Notification"
             android:parentActivityName=".main_menu" />

@@ -7,7 +7,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.khr.justquitit.adapter.RecoveryHistoryAdapter;
 import com.khr.justquitit.databinding.ActivityHealthProgressBinding;
@@ -23,6 +27,7 @@ public class HealthProgress extends AppCompatActivity {
     private RecoveryHistoryAdapter recoveryAdapter;
     private ArrayList<RecoveryHistory> recoveryArray;
     private static final int VERTICAL_ITEM_SPACE = 48;
+    ImageButton btnAssessment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +38,18 @@ public class HealthProgress extends AppCompatActivity {
         startAnimationCounter(0,90);
 
         Toolbar toolbar = findViewById(R.id.health_toolbar);
+        btnAssessment = findViewById(R.id.btn_assessment);
         setSupportActionBar(toolbar);
         ActionBar myActionbar = getSupportActionBar();
         myActionbar.setDisplayHomeAsUpEnabled(true);
+
+        btnAssessment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HealthProgress.this, MainSurvey.class);
+                startActivity(intent);
+            }
+        });
 
         InitializeCardView();
     }
