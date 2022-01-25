@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_aboutus"
@@ -25,6 +26,10 @@
             android:id="@+id/nav_products"
             android:icon="@drawable/ic_baseline_search_24"
             android:title="Products" />
+        <item
+            android:id="@+id/nav_trophy"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Trophy Room" />
         <item
             android:id="@+id/nav_logout2"
             android:icon="@drawable/exit_50px"

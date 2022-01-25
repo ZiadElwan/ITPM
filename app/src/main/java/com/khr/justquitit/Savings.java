@@ -198,7 +198,7 @@ public class Savings extends AppCompatActivity {
 
                 //Save user input inside ArrayList<SavingHistory>
                 SavingHistory saving = new SavingHistory(date, notes, money);
-                savingArray.add(saving);
+                savingArray.add(0, saving);
                 //Supposedly make the ArrayList permanentl  inside the user data.
                 PrefConfig.writeListInPref(getApplicationContext(), savingArray);
                 dialog.dismiss();

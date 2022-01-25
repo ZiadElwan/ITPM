@@ -79,18 +79,18 @@ public class HealthProgress extends AppCompatActivity {
     }
 
     private void CreateDataForCard() {
-        RecoveryHistory health = new RecoveryHistory("Day 1", "Started my own journey to stop smoking");
+        RecoveryHistory health = new RecoveryHistory("Test 1", "High on Nicotine Dependency. Recommended use patches, inhaler, lozenges and/or gums to replace cigs. ");
         recoveryArray.add(health);
 
-        health = new RecoveryHistory("Day 2", "Able to constraint myself to smoke");
+        health = new RecoveryHistory("Test 2", "High on Nicotine Dependency. Recommended use patches, inhaler, lozenges and/or gums to replace cigs. ");
         recoveryArray.add(health);
-        health = new RecoveryHistory("Day 3", "Able to constraint myself to smoke");
+        health = new RecoveryHistory("Test 3", "High on Nicotine Dependency. Recommended use patches, inhaler, lozenges and/or gums to replace cigs. ");
         recoveryArray.add(health);
-        health = new RecoveryHistory("Day 4", "Able to constraint myself to smoke");
+        health = new RecoveryHistory("Test 4", "High on Nicotine Dependency. Recommended use patches, inhaler, lozenges and/or gums to replace cigs. ");
         recoveryArray.add(health);
-        health = new RecoveryHistory("Day 5", "Able to constraint myself to smoke");
+        health = new RecoveryHistory("Test 5", "High on Nicotine Dependency. Recommended use patches, inhaler, lozenges and/or gums to replace cigs. ");
         recoveryArray.add(health);
-        health = new RecoveryHistory("Day 6", "Able to constraint myself to smoke");
+        health = new RecoveryHistory("Test 6", "High on Nicotine Dependency. Recommended use patches, inhaler, lozenges and/or gums to replace cigs. ");
         recoveryArray.add(health);
     }
 }
