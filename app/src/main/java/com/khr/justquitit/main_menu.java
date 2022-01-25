@@ -93,6 +93,12 @@ public class main_menu extends AppCompatActivity {
 
                         break;
 
+                    case R.id.nav_trophy:
+                        Intent intent6 = new Intent(main_menu.this, ShowTrophy.class);
+                        startActivity(intent6);
+
+                        break;
+
                     case R.id.nav_logout2:
 
                         FirebaseAuth.getInstance().signOut();

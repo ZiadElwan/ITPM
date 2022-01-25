@@ -41,9 +41,13 @@
             android:name=".ShowProducts"
             android:parentActivityName=".main_menu" />
         <activity
+            android:name=".ShowTrophy"
+            android:parentActivityName=".main_menu" />
+        <activity
             android:name=".HealthProgress"
             android:parentActivityName=".main_menu" />
-        <activity android:name=".Savings" /> <!-- <activity -->
+        <activity android:name=".Savings"
+            android:parentActivityName=".main_menu"/> <!-- <activity -->
         <!-- android:name=".QuitSmokingTips" -->
         <!-- android:parentActivityName=".main_menu" /> -->
         <activity
