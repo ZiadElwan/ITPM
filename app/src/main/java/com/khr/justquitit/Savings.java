@@ -202,12 +202,19 @@ public class Savings extends AppCompatActivity {
                 String notes = savingNotes.getText().toString();
                 String money = savingRM.getText().toString();
 
-                if(notes.isEmpty()){
+                if(notes.isEmpty() && money.isEmpty()){
                     savingNotes.setError("This Field cannot be empty");
+                    savingRM.setError("This Field cannot be empty");
                 } else if(notes.length() > 40){
                     savingNotes.setError("Short message is the best");
-                } else {
+                }else if(money.isEmpty()){
+                    savingRM.setError("This Field cannot be empty");
+                }else if(notes.isEmpty()){
+                    savingNotes.setError("This Field cannot be empty");
+                }
+                else {
                     savingNotes.setError(null);
+                    savingRM.setError(null);
                     //Save user input inside ArrayList<SavingHistory>
                     SavingHistory saving = new SavingHistory(date, notes, money);
                     savingArray.add(0, saving);

@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:counterEnabled="true"
-                app:counterMaxLength="40">
+                app:counterMaxLength="60">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/saving_notes"
