@@ -181,12 +181,15 @@ public class Savings extends AppCompatActivity {
         savingNotes = dialog.findViewById(R.id.saving_notes);
         savingRM = dialog.findViewById(R.id.saving_rm);
 
+
+
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
             }
         });
+
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -195,13 +198,22 @@ public class Savings extends AppCompatActivity {
                 String notes = savingNotes.getText().toString();
                 String money = savingRM.getText().toString();
 
+                if(notes.isEmpty()){
+                    savingNotes.setError("This Field cannot be empty");
+                } else if(notes.length() > 40){
+                    savingNotes.setError("Short message is the best");
+                } else {
+                    savingNotes.setError(null);
+                    //Save user input inside ArrayList<SavingHistory>
+                    SavingHistory saving = new SavingHistory(date, notes, money);
+                    savingArray.add(0, saving);
+                    //Supposedly make the ArrayList permanentl  inside the user data.
+                    PrefConfig.writeListInPref(getApplicationContext(), savingArray);
+                    dialog.dismiss();
+                }
 
-                //Save user input inside ArrayList<SavingHistory>
-                SavingHistory saving = new SavingHistory(date, notes, money);
-                savingArray.add(0, saving);
-                //Supposedly make the ArrayList permanentl  inside the user data.
-                PrefConfig.writeListInPref(getApplicationContext(), savingArray);
-                dialog.dismiss();
+
+
             }
         });
         buttonCancel.setOnClickListener(new View.OnClickListener() {

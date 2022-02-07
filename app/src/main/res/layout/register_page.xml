@@ -27,6 +27,7 @@
             android:drawableEnd="@drawable/ic_baseline_date_range_24"
             android:hint="Expected Success Date"
             android:outlineProvider="none"
+            android:textColor="#000000"
             tools:ignore="DuplicateIds" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -50,6 +51,7 @@
             android:drawableEnd="@drawable/ic_baseline_date_range_24"
             android:hint="Start Recovery Date"
             android:outlineProvider="none"
+            android:textColor="#000000"
             tools:ignore="DuplicateIds" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,6 +74,7 @@
             android:background="@drawable/edit"
             android:hint="Age"
             android:outlineProvider="none"
+            android:textColor="#000000"
             tools:ignore="DuplicateIds" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,6 +110,7 @@
             android:background="@drawable/edit"
             android:hint="Email"
             android:outlineProvider="none"
+            android:textColor="#000000"
             tools:ignore="DuplicateIds" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -129,6 +133,7 @@
             android:background="@drawable/edit"
             android:hint="Username"
             android:outlineProvider="none"
+            android:textColor="#000000"
             tools:ignore="DuplicateIds" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -151,7 +156,8 @@
             android:layout_height="50dp"
             android:background="@drawable/edit"
             android:hint="Re-type Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="#000000" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -173,7 +179,8 @@
             android:layout_height="50dp"
             android:background="@drawable/edit"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="#000000" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
