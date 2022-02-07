@@ -91,13 +91,15 @@ public class Savings extends AppCompatActivity {
 
     public void totalText(){
         if(savingArray != null) {
-            int total = 0;
+            double total = 0;
             for (int i = 0; i < savingArray.size(); i++) {
                 SavingHistory savingHistory = savingArray.get(i);
-                int temp = Integer.parseInt(savingHistory.getSaving());
+                double temp = Double.parseDouble(savingHistory.getSaving());
                 total += temp;
+                //2 decimal place
+                String formattedValue = String.format("%.2f", total);
 
-                String secondTemp = String.valueOf(total);
+                String secondTemp = String.valueOf(formattedValue);
                 System.out.println("TotalSave = "+secondTemp);
 
                 tvTotal.setText(secondTemp);
@@ -144,6 +146,8 @@ public class Savings extends AppCompatActivity {
         savingArray = PrefConfig.readListFromPref(this);
         if(savingArray == null){
             savingArray = new ArrayList<>();
+            //String date = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
+            //savingArray.add(date, "My First Journey", "0");
         }
 
 //        double sum = 0;
