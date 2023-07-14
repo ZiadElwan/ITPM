@@ -1,0 +1,14 @@
+## Introduction
+The Just Quit It App is a comprehensive mobile application designed to support university students in their journey to quit smoking. The app provides personalized tips, recommended products, savings tracking, and a health assessment feature to empower users and improve their chances of successfully quitting smoking. Through collaboration with universities, we aim to create a smoke-free environment on campuses and address the prevalent issue of smoking among students.
+
+## Features
+- *Personalized Tips:* Access a wide range of helpful tips and strategies to quit smoking, tailored to individual preferences and needs.
+- *Recommended Products:* Discover and explore recommended smoking cessation products, such as nicotine patches, gums, and other resources to assist in the quitting process.
+- *Savings Tracking:* Keep track of the money saved by quitting smoking, providing a tangible measure of progress and motivation.
+- *Health Assessment:* Complete a health assessment survey to evaluate nicotine dependence and receive a personalized score indicating the level of addiction.
+
+## Target Audience
+The Just Quit It App primarily targets university students aged 18 to 25 who are light smokers or new to smoking. We recognize the unique challenges and vulnerabilities of this demographic and aim to provide them with the necessary support and resources to quit smoking successfully.
+
+## Contribution
+This Application was based on another Github User's Repository (KaharWorkable), which both of our team members, Ziad El Sous and Ziad Elwan used and modified in a way to fit our view. We welcome contributions to enhance and improve the Just Quit It App. If you have suggestions, please visit our GitHub repository at [https://github.com/ZiadElwan/ITPM] for more information.
