@@ -84,7 +84,7 @@ public class AdapterFavTips extends RecyclerView.Adapter<AdapterFavTips.HolderFa
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String title = "" + snapshot.child("Title").getValue();
+                        String title = '' + snapshot.child("Title").getValue();
                         String description = "" + snapshot.child("Description").getValue();
                         String image = "" + snapshot.child("Image").getValue();
 
